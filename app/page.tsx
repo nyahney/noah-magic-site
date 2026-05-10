@@ -54,18 +54,30 @@ const featuredVideos = [
 const testimonials = [
   {
     name: "Merle H.",
-    quote:
-      "Noah amazed everyone with his incredible tricks and showmanship. We could not give him a stronger recommendation. You will not be disappointed!",
+    quote: (
+      <>
+        Noah amazed everyone with his <span className="font-semibold text-zinc-50">incredible tricks</span> and
+        showmanship. We could not give him a stronger recommendation. You will not be disappointed!
+      </>
+    ),
   },
   {
     name: "Brian V.",
-    quote:
-      "Noah's abilities and magic will leave you breathless. He is one of a kind! You will be happy you hired him to perform.",
+    quote: (
+      <>
+        Noah&apos;s abilities and magic will leave you breathless. He is{" "}
+        <span className="font-semibold text-zinc-50">one of a kind</span>. You will be happy you hired him to perform.
+      </>
+    ),
   },
   {
     name: "Danielle S.",
-    quote:
-      "Noah was a big hit at our recent celebration. He had both kids and adults watching in amazement. The magic was top notch!",
+    quote: (
+      <>
+        Noah was a <span className="font-semibold text-zinc-50">big hit</span> at our recent celebration. He had both
+        kids and adults watching in amazement. The magic was top notch!
+      </>
+    ),
   },
 ];
 
@@ -94,8 +106,8 @@ export default function Home() {
         <div className="light-sweep pointer-events-none absolute inset-0 -z-10" />
         <div className="mx-auto grid max-w-7xl gap-8 lg:grid-cols-[0.95fr_1.05fr] lg:items-center">
           <div className="reveal max-w-3xl">
-            <p className="mb-4 text-xs font-semibold uppercase tracking-[0.34em] text-[#d9c58f]">
-              Modern magician and mentalist
+            <p className="mb-4 text-[17px] font-semibold uppercase tracking-[0.34em] text-[#d9c58f]">
+              ELEVATED ENTERTAINMENT
             </p>
             <h1 className="text-4xl font-semibold leading-[0.96] tracking-normal text-zinc-50 sm:text-6xl lg:text-7xl">
               Modern Magic & Mentalism for Premium Events
@@ -184,7 +196,7 @@ export default function Home() {
       <section className="scroll-reveal px-5 py-16 sm:px-8 sm:py-24">
         <div className="mx-auto max-w-7xl">
           <div className="max-w-5xl">
-            <p className="text-xs font-semibold uppercase tracking-[0.34em] text-[#d9c58f]">
+            <p className="text-[17px] font-semibold uppercase tracking-[0.34em] text-[#d9c58f]">
               About the experience
             </p>
             <h2 className="mt-5 text-3xl font-semibold leading-tight text-zinc-50 sm:text-5xl">
@@ -221,7 +233,7 @@ export default function Home() {
         <div className="localized-glow mx-auto max-w-7xl">
           <div className="mb-8 flex flex-col gap-4 sm:flex-row sm:items-end sm:justify-between">
             <div>
-              <p className="stagger-in text-xs font-semibold uppercase tracking-[0.34em] text-[#d9c58f]">
+              <p className="stagger-in text-[17px] font-semibold uppercase tracking-[0.34em] text-[#d9c58f]">
                 Watch
               </p>
               <h2 className="stagger-in stagger-1 mt-4 text-3xl font-semibold text-zinc-50 sm:text-5xl">
@@ -278,7 +290,7 @@ export default function Home() {
       <section className="scroll-reveal px-5 py-16 sm:px-8 sm:py-20">
         <div className="mx-auto max-w-7xl">
           <div className="max-w-3xl">
-            <p className="text-xs font-semibold uppercase tracking-[0.34em] text-[#d9c58f]">
+            <p className="text-[17px] font-semibold uppercase tracking-[0.34em] text-[#d9c58f]">
               Events
             </p>
             <h2 className="mt-4 text-3xl font-semibold text-zinc-50 sm:text-5xl">
@@ -307,7 +319,7 @@ export default function Home() {
       <section className="scroll-reveal px-5 py-16 sm:px-8 sm:py-20">
         <div className="warm-trust-glow mx-auto max-w-7xl">
           <div className="mb-8 max-w-3xl">
-            <p className="text-xs font-semibold uppercase tracking-[0.34em] text-[#d9c58f]">
+            <p className="text-[17px] font-semibold uppercase tracking-[0.34em] text-[#d9c58f]">
               Testimonials
             </p>
             <h2 className="mt-4 text-3xl font-semibold text-zinc-50 sm:text-5xl">
@@ -359,7 +371,7 @@ export default function Home() {
         <div className="mx-auto max-w-7xl">
           <div className="mb-8 max-w-3xl">
             <div>
-              <p className="text-xs font-semibold uppercase tracking-[0.34em] text-[#d9c58f]">
+              <p className="text-[17px] font-semibold uppercase tracking-[0.34em] text-[#d9c58f]">
                 Gallery
               </p>
               <h2 className="mt-4 text-3xl font-semibold text-zinc-50 sm:text-5xl">
@@ -398,7 +410,7 @@ export default function Home() {
       </section>
 
       <section className="scroll-reveal px-5 pb-20 pt-10 sm:px-8 sm:pb-28">
-        <div className="final-cta-panel closing-glow mx-auto max-w-7xl overflow-hidden border border-[#d9c58f]/42 bg-[linear-gradient(135deg,rgba(255,255,255,0.16),rgba(255,255,255,0.065))] px-6 py-10 shadow-2xl shadow-black/25 sm:px-10 sm:py-14">
+        <div className="final-cta-panel closing-glow mx-auto max-w-7xl overflow-hidden border border-[#d9c58f]/45 bg-[linear-gradient(135deg,rgba(255,255,255,0.3),rgba(255,255,255,0.16))] px-6 py-10 shadow-xl shadow-black/16 sm:px-10 sm:py-14">
           <div className="max-w-3xl">
             <h2 className="text-3xl font-semibold text-zinc-50 sm:text-6xl">
               Make your event unforgettable.
@@ -409,7 +421,7 @@ export default function Home() {
             </p>
             <Link
               href="/contact"
-              className="cta-glow mt-8 inline-flex h-12 items-center justify-center bg-[#ead39a] px-7 text-sm font-semibold uppercase tracking-[0.17em] text-black transition hover:bg-[#f2e0b5]"
+              className="cta-glow mt-8 inline-flex h-12 items-center justify-center bg-[#d9c58f] px-7 text-sm font-semibold uppercase tracking-[0.17em] text-black transition hover:bg-zinc-100"
             >
               Check Availability
             </Link>

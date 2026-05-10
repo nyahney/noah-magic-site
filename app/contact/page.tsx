@@ -4,7 +4,7 @@ import { ContactForm } from "./contact-form";
 export const metadata: Metadata = {
   title: "Contact",
   description:
-    "Check availability for Noah Yahney, modern magician and mentalist for private events, corporate gatherings, luxury celebrations, and unforgettable experiences.",
+    "Get in touch with Noah Yahney, modern magician and mentalist for private events, corporate gatherings, luxury celebrations, and unforgettable experiences.",
 };
 
 const bookingDetails = [
@@ -20,18 +20,18 @@ export default function ContactPage() {
       <div className="absolute inset-x-0 top-0 -z-10 h-[32rem] bg-[radial-gradient(circle_at_20%_0%,rgba(217,197,143,0.13),transparent_42%),radial-gradient(circle_at_85%_10%,rgba(82,109,199,0.15),transparent_42%)] [mask-image:linear-gradient(to_bottom,black_0%,black_58%,transparent_100%)]" />
       <div className="mx-auto grid max-w-7xl gap-10 lg:grid-cols-[0.85fr_1.15fr] lg:gap-12">
         <div>
-          <p className="text-xs font-semibold uppercase tracking-[0.36em] text-[#d9c58f]">
+          <p className="text-[17px] font-semibold uppercase tracking-[0.36em] text-[#d9c58f]">
             Contact
           </p>
           <h1 className="mt-4 text-4xl font-semibold tracking-normal text-zinc-50 sm:mt-5 sm:text-7xl">
-            Check availability.
+            Let&apos;s talk about your event.
           </h1>
           <p className="mt-6 max-w-2xl text-lg leading-8 text-zinc-400">
             Tell me a little about your event and I&apos;ll get back to you
             with availability and next steps.
           </p>
           <p className="mt-4 max-w-2xl text-sm leading-6 text-zinc-500 sm:text-base">
-            Available for events across Westchester, New York, Connecticut, and
+            Available for events across New York, New Jersey, Connecticut, and
             beyond.
           </p>
 

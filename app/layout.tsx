@@ -1,6 +1,5 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
-import Image from "next/image";
 import Link from "next/link";
 import "./globals.css";
 
@@ -73,15 +72,8 @@ export default function RootLayout({
         <footer className="border-t border-white/10 px-5 py-8 sm:px-8 sm:py-10">
           <div className="mx-auto flex max-w-7xl flex-col gap-6 text-sm text-zinc-500 md:flex-row md:items-center md:justify-between">
             <div className="flex items-center gap-4">
-              <Image
-                src="/media/logo-take-1-no-background.png"
-                alt="Noah Yahney Magic & Mentalism logo"
-                width={52}
-                height={52}
-                className="h-12 w-auto object-contain"
-              />
               <p>
-                Available for events across Westchester, New York, Connecticut,
+                Available for events across New York, New Jersey, Connecticut,
                 and beyond.
               </p>
             </div>

@@ -183,6 +183,20 @@ html {
   z-index: -1;
 }
 
+.cta-glow {
+  transition:
+    box-shadow 220ms ease,
+    background-color 220ms ease,
+    border-color 220ms ease,
+    color 220ms ease,
+    transform 220ms ease;
+}
+
+.cta-glow:hover {
+  box-shadow: 0 0 30px rgba(217, 197, 143, 0.18);
+  transform: translateY(-1px);
+}
+
 .closing-glow {
   position: relative;
 }
@@ -208,22 +222,8 @@ html {
 .final-cta-panel .cta-glow {
   box-shadow:
     0 0 0 1px rgba(217, 197, 143, 0.2),
-    0 18px 38px rgba(0, 0, 0, 0.24),
-    0 0 22px rgba(217, 197, 143, 0.08);
-}
-
-.cta-glow {
-  transition:
-    box-shadow 220ms ease,
-    background-color 220ms ease,
-    border-color 220ms ease,
-    color 220ms ease,
-    transform 220ms ease;
-}
-
-.cta-glow:hover {
-  box-shadow: 0 0 30px rgba(217, 197, 143, 0.18);
-  transform: translateY(-1px);
+    0 18px 38px rgba(0, 0, 0, 0.2),
+    0 0 18px rgba(217, 197, 143, 0.09);
 }
 
 .float-slow {
@@ -388,7 +388,6 @@ html {
   .home-canvas::after,
   .localized-glow::before,
   .localized-glow::after,
-  .closing-glow::before,
   .float-slow,
   .float-slower,
   .reveal,

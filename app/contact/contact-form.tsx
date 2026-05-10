@@ -122,7 +122,7 @@ export function ContactForm() {
         type="submit"
         disabled={status === "submitting"}
       >
-        {status === "submitting" ? "Sending..." : "Check Availability"}
+        {status === "submitting" ? "Sending..." : "Send a Note"}
       </button>
 
       <div className="min-h-6" aria-live="polite">

@@ -90,7 +90,7 @@ export default function GalleryPage() {
       <div className="absolute inset-x-0 top-0 -z-10 h-[28rem] bg-[radial-gradient(circle_at_20%_0%,rgba(217,197,143,0.13),transparent_42%),radial-gradient(circle_at_90%_0%,rgba(82,109,199,0.14),transparent_42%)] [mask-image:linear-gradient(to_bottom,black_0%,black_58%,transparent_100%)]" />
       <div className="mx-auto max-w-7xl">
         <div className="max-w-3xl">
-          <p className="text-xs font-semibold uppercase tracking-[0.36em] text-[#d9c58f]">
+          <p className="text-[17px] font-semibold uppercase tracking-[0.36em] text-[#d9c58f]">
             Gallery
           </p>
           <h1 className="mt-4 text-4xl font-semibold tracking-normal text-zinc-50 sm:mt-5 sm:text-7xl">

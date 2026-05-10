@@ -42,7 +42,7 @@ export function ContactForm() {
       <label className="grid gap-2 text-sm font-medium text-zinc-300">
         Name
         <input
-          className="h-12 border border-white/10 bg-black/50 px-4 text-zinc-100 outline-none transition focus:border-[#d9c58f]"
+          className="h-12 w-full border border-white/10 bg-[#080806]/70 px-4 text-zinc-100 outline-none transition focus:border-[#d9c58f]"
           name="name"
           required
           autoComplete="name"
@@ -51,7 +51,7 @@ export function ContactForm() {
       <label className="grid gap-2 text-sm font-medium text-zinc-300">
         Email
         <input
-          className="h-12 border border-white/10 bg-black/50 px-4 text-zinc-100 outline-none transition focus:border-[#d9c58f]"
+          className="h-12 w-full border border-white/10 bg-[#080806]/70 px-4 text-zinc-100 outline-none transition focus:border-[#d9c58f]"
           name="email"
           type="email"
           required
@@ -62,7 +62,7 @@ export function ContactForm() {
         <label className="grid gap-2 text-sm font-medium text-zinc-300">
           Event Date
           <input
-            className="h-12 border border-white/10 bg-black/50 px-4 text-zinc-100 outline-none transition focus:border-[#d9c58f]"
+            className="h-12 w-full border border-white/10 bg-[#080806]/70 px-4 text-zinc-100 outline-none transition focus:border-[#d9c58f]"
             name="event_date"
             type="date"
           />
@@ -70,7 +70,7 @@ export function ContactForm() {
         <label className="grid gap-2 text-sm font-medium text-zinc-300">
           Event Type
           <select
-            className="h-12 border border-white/10 bg-black/50 px-4 text-zinc-100 outline-none transition focus:border-[#d9c58f]"
+            className="h-12 w-full border border-white/10 bg-[#080806]/70 px-4 text-zinc-100 outline-none transition focus:border-[#d9c58f]"
             name="event_type"
             required
             defaultValue=""
@@ -90,18 +90,18 @@ export function ContactForm() {
       <label className="grid gap-2 text-sm font-medium text-zinc-300">
         Message
         <textarea
-          className="min-h-36 resize-y border border-white/10 bg-black/50 p-4 text-zinc-100 outline-none transition focus:border-[#d9c58f]"
+          className="min-h-36 w-full resize-y border border-white/10 bg-[#080806]/70 p-4 text-zinc-100 outline-none transition focus:border-[#d9c58f]"
           name="message"
           required
         />
       </label>
 
       <button
-        className="h-12 bg-[#d9c58f] px-7 text-sm font-semibold uppercase tracking-[0.18em] text-black transition hover:bg-zinc-100 disabled:cursor-not-allowed disabled:opacity-60"
+        className="h-12 w-full bg-[#d9c58f] px-7 text-sm font-semibold uppercase tracking-[0.18em] text-black transition hover:bg-zinc-100 disabled:cursor-not-allowed disabled:opacity-60"
         type="submit"
         disabled={status === "submitting"}
       >
-        {status === "submitting" ? "Sending..." : "Send inquiry"}
+        {status === "submitting" ? "Sending..." : "Check Availability"}
       </button>
 
       <div className="min-h-6" aria-live="polite">

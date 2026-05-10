@@ -1,10 +1,11 @@
+import Image from "next/image";
 import Link from "next/link";
 
 const highlights = [
-  "Black-tie corporate galas",
-  "Intimate private events",
-  "Walkaround magic",
-  "Adults and teens",
+  "15 years professional experience",
+  "Private events",
+  "Corporate gatherings",
+  "Luxury celebrations",
 ];
 
 const services = [
@@ -58,50 +59,58 @@ const featuredVideos = [
 export default function Home() {
   return (
     <>
-      <section className="relative overflow-hidden px-5 py-20 sm:px-8 sm:py-28 lg:py-36">
-        <div
-          className="absolute inset-x-0 top-0 -z-20 h-[760px] bg-cover bg-center opacity-75"
-          style={{
-            backgroundImage: `linear-gradient(rgba(5,5,5,0.2),rgba(5,5,5,0.7)),url('${featureImage}')`,
-          }}
+      <section className="relative overflow-hidden px-5 py-14 sm:px-8 sm:py-24 lg:py-32">
+        <Image
+          className="absolute inset-x-0 top-0 -z-20 h-[700px] w-full object-cover object-center opacity-65"
+          src={featureImage}
+          alt=""
+          fill={false}
+          width={1600}
+          height={2000}
+          priority
+          sizes="100vw"
         />
-        <div className="absolute inset-x-0 top-0 -z-10 h-[760px] bg-[linear-gradient(90deg,#050505_0%,rgba(5,5,5,0.7)_38%,rgba(5,5,5,0.2)_100%),linear-gradient(180deg,rgba(5,5,5,0.1)_0%,#050505_92%)]" />
-        <div className="mx-auto grid max-w-7xl gap-12 lg:grid-cols-[1.1fr_0.9fr] lg:items-end">
+        <div className="absolute inset-x-0 top-0 -z-10 h-[700px] bg-[linear-gradient(90deg,#080806_0%,rgba(8,8,6,0.78)_38%,rgba(8,8,6,0.35)_100%),linear-gradient(180deg,rgba(8,8,6,0.08)_0%,#080806_92%)]" />
+        <div className="mx-auto grid max-w-7xl gap-9 lg:grid-cols-[1.08fr_0.92fr] lg:items-end">
           <div className="max-w-3xl">
-            <p className="mb-6 text-xs font-semibold uppercase tracking-[0.36em] text-[#d9c58f]">
-              Welcome to Noah Yahney Magic & Mentalism
+            <p className="mb-4 text-xs font-semibold uppercase tracking-[0.28em] text-[#d9c58f] sm:mb-6 sm:tracking-[0.36em]">
+              Modern magician and mentalist
             </p>
-            <h1 className="text-5xl font-semibold leading-[0.95] tracking-normal text-zinc-50 sm:text-7xl lg:text-8xl">
-              Forget everything you think you know about magicians.
+            <h1 className="max-w-4xl text-4xl font-semibold leading-[0.98] tracking-normal text-zinc-50 sm:text-6xl lg:text-7xl">
+              Unforgettable magic for premium events.
             </h1>
-            <p className="mt-7 max-w-2xl text-lg leading-8 text-zinc-300 sm:text-xl">
-              Noah brings a modern perspective to an age-old craft, with 15
-              years of professional magic and mentalism experience and
-              collaborations with some of the best illusionists in the world.
+            <p className="mt-5 max-w-2xl text-base leading-7 text-zinc-300 sm:mt-7 sm:text-xl sm:leading-8">
+              Noah Yahney delivers modern magic and mentalism for private
+              events, corporate gatherings, luxury celebrations, and
+              unforgettable experiences.
             </p>
-            <div className="mt-10 flex flex-col gap-4 sm:flex-row">
+            <p className="mt-4 max-w-2xl text-sm leading-6 text-zinc-400 sm:text-base">
+              Available for events across Westchester, New York, Connecticut,
+              and beyond.
+            </p>
+            <div className="mt-8 flex flex-col gap-3 sm:mt-10 sm:flex-row">
               <Link
                 href="/contact"
-                className="inline-flex h-12 items-center justify-center bg-[#d9c58f] px-7 text-sm font-semibold uppercase tracking-[0.18em] text-black transition hover:bg-zinc-100"
+                className="inline-flex h-12 items-center justify-center bg-[#d9c58f] px-6 text-sm font-semibold uppercase tracking-[0.16em] text-black transition hover:bg-zinc-100 sm:px-7 sm:tracking-[0.18em]"
               >
-                Drop us a line
+                Check Availability
               </Link>
               <Link
-                href="/gallery"
-                className="inline-flex h-12 items-center justify-center border border-white/20 px-7 text-sm font-semibold uppercase tracking-[0.18em] text-zinc-100 transition hover:border-[#d9c58f] hover:text-[#d9c58f]"
+                href="#watch"
+                className="inline-flex h-12 items-center justify-center border border-white/20 px-6 text-sm font-semibold uppercase tracking-[0.16em] text-zinc-100 transition hover:border-[#d9c58f] hover:text-[#d9c58f] sm:px-7 sm:tracking-[0.18em]"
               >
-                View gallery
+                Watch the Reel
               </Link>
             </div>
           </div>
-          <div className="border border-white/10 bg-black/50 p-5 backdrop-blur">
+          <div className="border border-white/10 bg-[#0b0a08]/55 p-4 backdrop-blur sm:p-5">
             <div
               className="aspect-[4/5] bg-cover bg-center"
               style={{
-                backgroundImage: `linear-gradient(180deg,rgba(5,5,5,0),rgba(5,5,5,0.82)),url('${featureImage}')`,
+                backgroundImage: `linear-gradient(180deg,rgba(8,8,6,0),rgba(8,8,6,0.82)),url('${featureImage}')`,
               }}
             />
-            <div className="mt-5 grid grid-cols-2 gap-3 text-xs uppercase tracking-[0.18em] text-zinc-400">
+            <div className="mt-5 grid grid-cols-2 gap-3 text-[11px] uppercase tracking-[0.14em] text-zinc-400 sm:text-xs sm:tracking-[0.18em]">
               {highlights.map((item) => (
                 <span key={item} className="border-t border-white/10 pt-3">
                   {item}
@@ -112,14 +121,33 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="px-5 py-16 sm:px-8">
+      <section className="px-5 py-10 sm:px-8 sm:py-12">
+        <div className="mx-auto grid max-w-7xl gap-4 border-y border-white/10 py-6 sm:grid-cols-3">
+          <div>
+            <p className="text-3xl font-semibold text-zinc-50">15 years</p>
+            <p className="mt-2 text-sm uppercase tracking-[0.18em] text-zinc-500">
+              Professional experience
+            </p>
+          </div>
+          {reviews.slice(0, 2).map((review) => (
+            <blockquote key={review.name} className="text-sm leading-6 text-zinc-300">
+              <p>{review.quote}</p>
+              <footer className="mt-3 text-xs font-semibold uppercase tracking-[0.18em] text-[#d9c58f]">
+                5-star review - {review.name}
+              </footer>
+            </blockquote>
+          ))}
+        </div>
+      </section>
+
+      <section className="px-5 py-12 sm:px-8 sm:py-14">
         <div className="mx-auto grid max-w-7xl gap-5 md:grid-cols-3">
           {services.map((service) => (
             <article
               key={service.title}
-              className="border border-white/10 bg-white/[0.03] p-7"
+              className="border border-white/10 bg-[#10100c]/70 p-6 sm:p-7"
             >
-              <h2 className="text-2xl font-semibold text-zinc-50">
+              <h2 className="text-xl font-semibold text-zinc-50 sm:text-2xl">
                 {service.title}
               </h2>
               <p className="mt-4 leading-7 text-zinc-400">{service.body}</p>
@@ -128,23 +156,23 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="px-5 py-16 sm:px-8">
+      <section id="watch" className="px-5 py-12 sm:px-8 sm:py-14">
         <div className="mx-auto max-w-7xl">
           <div className="max-w-3xl">
             <p className="text-xs font-semibold uppercase tracking-[0.36em] text-[#d9c58f]">
               Watch
             </p>
-            <h2 className="mt-5 text-4xl font-semibold text-zinc-50 sm:text-5xl">
+            <h2 className="mt-4 text-3xl font-semibold text-zinc-50 sm:mt-5 sm:text-5xl">
               See the energy in motion.
             </h2>
           </div>
-          <div className="mt-10 grid gap-6 lg:grid-cols-[1.35fr_0.65fr] lg:items-center">
+          <div className="mt-8 grid gap-6 lg:grid-cols-[1.35fr_0.65fr] lg:items-center">
             {featuredVideos.map((video) => (
               <figure
                 key={video.embedUrl}
-                className={`border border-white/10 bg-white/[0.03] p-4 shadow-2xl shadow-black/30 ${
+                className={`border border-white/10 bg-[#10100c]/70 p-3 shadow-2xl shadow-black/30 sm:p-4 ${
                   video.aspect === "vertical"
-                    ? "mx-auto w-full max-w-[360px] rounded-[2rem] border-white/15 bg-black p-3"
+                    ? "mx-auto w-full max-w-[330px] rounded-[2rem] border-white/15 bg-[#070706] p-3 sm:max-w-[360px]"
                     : ""
                 }`}
               >
@@ -159,13 +187,14 @@ export default function Home() {
                     className="h-full w-full"
                     src={video.embedUrl}
                     title={video.caption}
+                    loading="lazy"
                     allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                     referrerPolicy="strict-origin-when-cross-origin"
                     allowFullScreen
                   />
                 </div>
                 <figcaption
-                  className={`mt-4 text-sm font-semibold uppercase tracking-[0.22em] text-[#d9c58f] ${
+                  className={`mt-4 text-sm font-semibold uppercase tracking-[0.18em] text-[#d9c58f] sm:tracking-[0.22em] ${
                     video.aspect === "vertical" ? "text-center" : ""
                   }`}
                 >
@@ -177,22 +206,28 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="px-5 py-16 sm:px-8">
-        <div className="mx-auto max-w-7xl border-y border-white/10 py-12">
-          <p className="max-w-4xl text-3xl font-medium leading-tight text-zinc-100 sm:text-5xl">
+      <section className="px-5 py-12 sm:px-8 sm:py-14">
+        <div className="mx-auto flex max-w-7xl flex-col gap-8 border-y border-white/10 py-10 lg:flex-row lg:items-center lg:justify-between">
+          <p className="max-w-4xl text-2xl font-medium leading-tight text-zinc-100 sm:text-5xl">
             Whether performing table to table or strolling through the crowd,
             Noah performs illusions your guests have never seen before.
           </p>
+          <Link
+            href="/contact"
+            className="inline-flex h-12 shrink-0 items-center justify-center bg-[#d9c58f] px-6 text-sm font-semibold uppercase tracking-[0.16em] text-black transition hover:bg-zinc-100 sm:px-7"
+          >
+            Check Availability
+          </Link>
         </div>
       </section>
 
-      <section className="px-5 py-16 sm:px-8">
+      <section className="px-5 py-12 sm:px-8 sm:py-14">
         <div className="mx-auto grid max-w-7xl gap-8 lg:grid-cols-[0.85fr_1.15fr] lg:items-center">
           <div>
             <p className="text-xs font-semibold uppercase tracking-[0.36em] text-[#d9c58f]">
               The experience
             </p>
-            <h2 className="mt-5 text-4xl font-semibold text-zinc-50 sm:text-5xl">
+            <h2 className="mt-4 text-3xl font-semibold text-zinc-50 sm:mt-5 sm:text-5xl">
               Shared moments that turn into the thing everyone talks about.
             </h2>
           </div>
@@ -200,7 +235,7 @@ export default function Home() {
             {reviews.map((review) => (
               <blockquote
                 key={review.name}
-                className="border-l border-[#d9c58f] bg-black/35 p-6 text-lg leading-7 text-zinc-300"
+                className="border-l border-[#d9c58f] bg-[#10100c]/60 p-5 text-base leading-7 text-zinc-300 sm:p-6"
               >
                 <p>{review.quote}</p>
                 <footer className="mt-5 text-xs font-semibold uppercase tracking-[0.22em] text-[#d9c58f]">

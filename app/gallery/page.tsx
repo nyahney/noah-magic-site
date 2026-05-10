@@ -4,7 +4,8 @@ import Link from "next/link";
 
 export const metadata: Metadata = {
   title: "Gallery",
-  description: "Photo gallery for Noah Yahney Magic & Mentalism.",
+  description:
+    "Photo gallery for Noah Yahney, modern magician and mentalist for private events, corporate gatherings, and luxury celebrations.",
 };
 
 type GalleryItem = {
@@ -85,13 +86,13 @@ const galleryItems: GalleryItem[] = [
 
 export default function GalleryPage() {
   return (
-    <section className="px-5 py-16 sm:px-8 sm:py-24">
+    <section className="px-5 py-12 sm:px-8 sm:py-20">
       <div className="mx-auto max-w-7xl">
         <div className="max-w-3xl">
           <p className="text-xs font-semibold uppercase tracking-[0.36em] text-[#d9c58f]">
             Gallery
           </p>
-          <h1 className="mt-5 text-5xl font-semibold tracking-normal text-zinc-50 sm:text-7xl">
+          <h1 className="mt-4 text-4xl font-semibold tracking-normal text-zinc-50 sm:mt-5 sm:text-7xl">
             Photo Gallery
           </h1>
           <p className="mt-6 text-lg leading-8 text-zinc-400">
@@ -100,11 +101,11 @@ export default function GalleryPage() {
           </p>
         </div>
 
-        <div className="mt-12 grid auto-rows-[230px] gap-4 sm:auto-rows-[270px] md:grid-cols-4">
+        <div className="mt-10 grid auto-rows-[190px] grid-cols-2 gap-3 sm:auto-rows-[250px] sm:gap-4 md:grid-cols-4">
           {galleryItems.map((item) => (
             <article
               key={item.path}
-              className={`group relative overflow-hidden border border-white/10 bg-zinc-950 ${item.className ?? ""}`}
+              className={`group relative overflow-hidden border border-white/10 bg-[#10100c] ${item.className ?? ""}`}
             >
               <Image
                 className="absolute inset-0 object-cover opacity-85 transition duration-500 group-hover:scale-105 group-hover:opacity-100"
@@ -118,7 +119,7 @@ export default function GalleryPage() {
           ))}
         </div>
 
-        <div className="mt-12 flex flex-col items-start justify-between gap-5 border-t border-white/10 pt-8 sm:flex-row sm:items-center">
+        <div className="mt-10 flex flex-col items-start justify-between gap-5 border-t border-white/10 pt-8 sm:flex-row sm:items-center">
           <p className="max-w-2xl text-zinc-400">
             Modern, visual, high-energy, interactive magic for adults and teens,
             blending mind-reading techniques and sleight-of-hand.
@@ -127,7 +128,7 @@ export default function GalleryPage() {
             href="/contact"
             className="inline-flex h-12 items-center justify-center bg-[#d9c58f] px-7 text-sm font-semibold uppercase tracking-[0.18em] text-black transition hover:bg-zinc-100"
           >
-            Drop us a line
+            Check Availability
           </Link>
         </div>
       </div>

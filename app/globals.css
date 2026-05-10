@@ -1,7 +1,7 @@
 @import "tailwindcss";
 
 :root {
-  --background: #050505;
+  --background: #080806;
   --foreground: #f4f0e8;
 }
 
@@ -20,7 +20,7 @@ body {
 
 ::selection {
   background: #c7a969;
-  color: #050505;
+  color: #080806;
 }
 
 html {
@@ -29,7 +29,7 @@ html {
 
 .cinematic-grain {
   background-image:
-    linear-gradient(rgba(255, 255, 255, 0.025) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(255, 255, 255, 0.025) 1px, transparent 1px);
-  background-size: 36px 36px;
+    linear-gradient(rgba(255, 255, 255, 0.018) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.018) 1px, transparent 1px);
+  background-size: 40px 40px;
 }

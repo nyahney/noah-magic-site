@@ -1,7 +1,7 @@
 @import "tailwindcss";
 
 :root {
-  --background: #080806;
+  --background: #07080a;
   --foreground: #f4f0e8;
 }
 
@@ -32,4 +32,196 @@ html {
     linear-gradient(rgba(255, 255, 255, 0.018) 1px, transparent 1px),
     linear-gradient(90deg, rgba(255, 255, 255, 0.018) 1px, transparent 1px);
   background-size: 40px 40px;
+}
+
+.reveal {
+  animation: reveal 720ms ease both;
+}
+
+.reveal-delay {
+  animation: reveal 860ms ease 120ms both;
+}
+
+.ambient-shift {
+  animation: ambient-shift 18s ease-in-out infinite alternate;
+}
+
+.hero-ambient {
+  animation: hero-ambient 22s ease-in-out infinite alternate;
+}
+
+.light-sweep {
+  animation: light-sweep 18s ease-in-out infinite;
+  background: linear-gradient(
+    105deg,
+    transparent 0%,
+    transparent 38%,
+    rgba(217, 197, 143, 0.055) 47%,
+    rgba(98, 130, 210, 0.055) 52%,
+    transparent 62%,
+    transparent 100%
+  );
+  background-size: 220% 100%;
+}
+
+.float-slow {
+  animation: float-slow 7s ease-in-out infinite;
+}
+
+.float-slower {
+  animation: float-slow 9s ease-in-out infinite reverse;
+}
+
+.rotating-word {
+  display: inline-block;
+  height: 1.12em;
+  min-width: 10.75ch;
+  overflow: hidden;
+  position: relative;
+  vertical-align: baseline;
+}
+
+.rotating-word span {
+  animation: rotate-word 22s cubic-bezier(0.77, 0, 0.18, 1) infinite;
+  left: 0;
+  opacity: 0;
+  position: absolute;
+  top: 0;
+  transform: translateY(0.35em);
+  white-space: nowrap;
+}
+
+.rotating-word span:nth-child(2) {
+  animation-delay: 5.5s;
+}
+
+.rotating-word span:nth-child(3) {
+  animation-delay: 11s;
+}
+
+.rotating-word span:nth-child(4) {
+  animation-delay: 16.5s;
+}
+
+.lift-glow {
+  box-shadow: 0 0 0 rgba(217, 197, 143, 0);
+  transition:
+    transform 240ms ease,
+    border-color 240ms ease,
+    box-shadow 240ms ease,
+    background-color 240ms ease;
+}
+
+.lift-glow:hover {
+  box-shadow: 0 18px 42px rgba(217, 197, 143, 0.1);
+  transform: translateY(-3px);
+}
+
+@keyframes reveal {
+  from {
+    opacity: 0;
+    transform: translateY(18px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes ambient-shift {
+  from {
+    transform: translate3d(-1%, -1%, 0) scale(1);
+  }
+  to {
+    transform: translate3d(1%, 1%, 0) scale(1.04);
+  }
+}
+
+@keyframes hero-ambient {
+  from {
+    filter: blur(0);
+    opacity: 0.82;
+    transform: translate3d(-1.5%, -1%, 0) scale(1);
+  }
+  to {
+    filter: blur(1px);
+    opacity: 1;
+    transform: translate3d(1.5%, 1%, 0) scale(1.04);
+  }
+}
+
+@keyframes light-sweep {
+  0%,
+  100% {
+    background-position: 115% 0;
+    opacity: 0.24;
+  }
+  50% {
+    background-position: -25% 0;
+    opacity: 0.48;
+  }
+}
+
+@keyframes float-slow {
+  0%,
+  100% {
+    transform: translateY(0) rotate(var(--rotate, 0deg));
+  }
+  50% {
+    transform: translateY(-8px) rotate(var(--rotate, 0deg));
+  }
+}
+
+@keyframes rotate-word {
+  0% {
+    opacity: 0;
+    transform: translateY(0.35em);
+  }
+  6%,
+  22% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  28%,
+  100% {
+    opacity: 0;
+    transform: translateY(-0.35em);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .ambient-shift,
+  .hero-ambient,
+  .light-sweep,
+  .float-slow,
+  .float-slower,
+  .reveal,
+  .reveal-delay,
+  .rotating-word span {
+    animation: none;
+  }
+
+  .rotating-word span:first-child {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+@supports (animation-timeline: view()) {
+  .scroll-reveal {
+    animation: scroll-reveal both;
+    animation-range: entry 8% cover 25%;
+    animation-timeline: view();
+  }
+
+  @keyframes scroll-reveal {
+    from {
+      opacity: 0;
+      transform: translateY(22px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
 }

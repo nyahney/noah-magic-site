@@ -1,47 +1,42 @@
 import Image from "next/image";
 import Link from "next/link";
-
-const highlights = [
-  "15 years professional experience",
-  "Private events",
-  "Corporate gatherings",
-  "Luxury celebrations",
-];
-
-const services = [
-  {
-    title: "Close-Up & Walkaround",
-    body: "Magic is the perfect ice-breaker. Noah creates shared moments that get guests talking, laughing, and bonding together.",
-  },
-  {
-    title: "Magic & Mentalism",
-    body: "Modern, visual, high-energy, interactive magic for adults and teens, blending mind-reading techniques and sleight-of-hand.",
-  },
-  {
-    title: "Private & Corporate Events",
-    body: "Whether a black-tie corporate gala or an intimate private event, Noah brings a unique approach to each performance.",
-  },
-];
-
-const reviews = [
-  {
-    name: "Merle H.",
-    quote:
-      "Noah amazed everyone with his incredible tricks and showmanship. We could not give him a stronger recommendation. You will not be disappointed!",
-  },
-  {
-    name: "Brian V.",
-    quote:
-      "Noah's abilities and magic will leave you breathless....you will never forget the card tricks. He is one a of a kind! You will be happy you hired him to perform.",
-  },
-  {
-    name: "Danielle S.",
-    quote:
-      "Noah was a big hit at our recent celebration. He had both kids and adults watching in amazement. The magic was top notch! We highly recommend and would definitely hire him again!",
-  },
-];
+import type { CSSProperties } from "react";
 
 const featureImage = "/media/main-picture.jpg";
+
+const trustItems = [
+  "15 Years Experience",
+  "Private Events",
+  "Corporate Gatherings",
+  "Luxury Celebrations",
+];
+
+const eventTypes = [
+  {
+    title: "Private Parties",
+    body: "Close-up moments that turn living rooms, rooftops, and private dinners into something guests keep talking about.",
+  },
+  {
+    title: "Corporate Events",
+    body: "Polished, guest-friendly entertainment for client receptions, team celebrations, and high-touch brand experiences.",
+  },
+  {
+    title: "Cocktail Hours",
+    body: "Walkaround magic that breaks the ice, fills transition time, and gives every group a shared reaction.",
+  },
+  {
+    title: "Bar/Bat Mitzvahs",
+    body: "Interactive magic for teens and adults, designed to keep energy high without feeling like a kids' show.",
+  },
+  {
+    title: "Holiday Parties",
+    body: "A premium way to add surprise, conversation, and momentum to seasonal celebrations.",
+  },
+  {
+    title: "Weddings & Receptions",
+    body: "Elegant close-up entertainment for cocktail hours, receptions, and the moments between formalities.",
+  },
+];
 
 const featuredVideos = [
   {
@@ -56,123 +51,193 @@ const featuredVideos = [
   },
 ];
 
+const testimonials = [
+  {
+    name: "Merle H.",
+    quote:
+      "Noah amazed everyone with his incredible tricks and showmanship. We could not give him a stronger recommendation. You will not be disappointed!",
+  },
+  {
+    name: "Brian V.",
+    quote:
+      "Noah's abilities and magic will leave you breathless. He is one of a kind! You will be happy you hired him to perform.",
+  },
+  {
+    name: "Danielle S.",
+    quote:
+      "Noah was a big hit at our recent celebration. He had both kids and adults watching in amazement. The magic was top notch!",
+  },
+];
+
+const galleryPreview = [
+  "/media/main-picture.jpg",
+  "/media/great-reactions-2.jpg",
+  "/media/another-adult-interaction-shot-00021-todd-yahney-events-pencu-bat-mitzvah.jpg",
+  "/media/standstill-adult-shot-crop-guy-on-right.jpg",
+  "/media/crowd-interaction-magic.jpg",
+  "/media/table-side-magic-reaction.jpg",
+];
+
+const heroCollage = [
+  "/media/great-reactions-2.jpg",
+  "/media/standstill-adult-shot-crop-guy-on-right.jpg",
+  "/media/table-side-magic-reaction.jpg",
+];
+
+const googleReviewsUrl =
+  "https://www.google.com/search?sca_esv=06a5c6fbedc9f216&rlz=1C1GCEA_enUS1179US1179&sxsrf=ANbL-n6_oT4k094shBvJusvee8sCbm0cdA:1778425063660&si=AL3DRZEsmMGCryMMFSHJ3StBhOdZ2-6yYkXd_doETEE1OR-qOfEN4rBi4sm9w9UehENhJJH5bq9uadivMY0m4vFjw3G0xQchQT3L7W725lTkAj_2j1pXoj0dmBIIqj4tN7rLGa_Qyl5z7CbgQnG45e8zxttV-CMo2A%3D%3D&q=Noah+Yahney+Magic+%26+Mentalism+Reviews&sa=X&ved=2ahUKEwjNiLfR_a6UAxUCjIkEHduGAEYQ0bkNegQIMBAF&biw=1920&bih=945&dpr=1";
+
 export default function Home() {
   return (
     <>
-      <section className="relative overflow-hidden px-5 py-14 sm:px-8 sm:py-24 lg:py-32">
-        <Image
-          className="absolute inset-x-0 top-0 -z-20 h-[700px] w-full object-cover object-center opacity-65"
-          src={featureImage}
-          alt=""
-          fill={false}
-          width={1600}
-          height={2000}
-          priority
-          sizes="100vw"
-        />
-        <div className="absolute inset-x-0 top-0 -z-10 h-[700px] bg-[linear-gradient(90deg,#080806_0%,rgba(8,8,6,0.78)_38%,rgba(8,8,6,0.35)_100%),linear-gradient(180deg,rgba(8,8,6,0.08)_0%,#080806_92%)]" />
-        <div className="mx-auto grid max-w-7xl gap-9 lg:grid-cols-[1.08fr_0.92fr] lg:items-end">
-          <div className="max-w-3xl">
-            <p className="mb-4 text-xs font-semibold uppercase tracking-[0.28em] text-[#d9c58f] sm:mb-6 sm:tracking-[0.36em]">
+      <section className="relative overflow-hidden px-5 py-12 sm:px-8 sm:py-18 lg:py-24">
+        <div className="hero-ambient absolute inset-0 -z-20 bg-[radial-gradient(circle_at_16%_18%,rgba(204,163,86,0.25),transparent_28%),radial-gradient(circle_at_88%_14%,rgba(82,109,199,0.26),transparent_32%)]" />
+        <div className="light-sweep pointer-events-none absolute inset-0 -z-10" />
+        <div className="mx-auto grid max-w-7xl gap-8 lg:grid-cols-[0.95fr_1.05fr] lg:items-center">
+          <div className="reveal max-w-3xl">
+            <p className="mb-4 text-xs font-semibold uppercase tracking-[0.34em] text-[#d9c58f]">
               Modern magician and mentalist
             </p>
-            <h1 className="max-w-4xl text-4xl font-semibold leading-[0.98] tracking-normal text-zinc-50 sm:text-6xl lg:text-7xl">
-              Unforgettable magic for premium events.
+            <h1 className="text-4xl font-semibold leading-[0.96] tracking-normal text-zinc-50 sm:text-6xl lg:text-7xl">
+              Modern Magic & Mentalism for Premium Events
             </h1>
-            <p className="mt-5 max-w-2xl text-base leading-7 text-zinc-300 sm:mt-7 sm:text-xl sm:leading-8">
-              Noah Yahney delivers modern magic and mentalism for private
-              events, corporate gatherings, luxury celebrations, and
-              unforgettable experiences.
+            <p className="mt-5 max-w-2xl text-base leading-7 text-zinc-300 sm:text-xl sm:leading-8">
+              Noah Yahney creates interactive, high-energy moments that get
+              guests laughing, reacting, and talking long after the event ends.
             </p>
-            <p className="mt-4 max-w-2xl text-sm leading-6 text-zinc-400 sm:text-base">
-              Available for events across Westchester, New York, Connecticut,
-              and beyond.
-            </p>
-            <div className="mt-8 flex flex-col gap-3 sm:mt-10 sm:flex-row">
+            <div className="mt-8 flex flex-col gap-3 sm:flex-row">
               <Link
                 href="/contact"
-                className="inline-flex h-12 items-center justify-center bg-[#d9c58f] px-6 text-sm font-semibold uppercase tracking-[0.16em] text-black transition hover:bg-zinc-100 sm:px-7 sm:tracking-[0.18em]"
+                className="inline-flex h-12 items-center justify-center bg-[#d9c58f] px-7 text-sm font-semibold uppercase tracking-[0.17em] text-black transition hover:bg-zinc-100 hover:shadow-[0_0_28px_rgba(217,197,143,0.2)]"
               >
                 Check Availability
               </Link>
               <Link
                 href="#watch"
-                className="inline-flex h-12 items-center justify-center border border-white/20 px-6 text-sm font-semibold uppercase tracking-[0.16em] text-zinc-100 transition hover:border-[#d9c58f] hover:text-[#d9c58f] sm:px-7 sm:tracking-[0.18em]"
+                className="inline-flex h-12 items-center justify-center border border-white/20 bg-white/[0.03] px-7 text-sm font-semibold uppercase tracking-[0.17em] text-zinc-100 transition hover:border-[#d9c58f] hover:text-[#d9c58f]"
               >
                 Watch the Reel
               </Link>
             </div>
           </div>
-          <div className="border border-white/10 bg-[#0b0a08]/55 p-4 backdrop-blur sm:p-5">
+
+          <div className="reveal-delay relative min-h-[430px] sm:min-h-[620px]">
+            <div className="absolute -inset-6 -z-10 bg-[radial-gradient(circle,rgba(217,197,143,0.2),transparent_56%)] blur-2xl" />
+            <div className="absolute left-0 top-0 w-[74%] overflow-hidden rounded-[1.4rem] border border-white/10 bg-[#10100c]/70 p-2 shadow-2xl shadow-black/50 sm:p-3">
+              <div className="relative aspect-[4/5] overflow-hidden rounded-[1rem]">
+                <Image
+                  className="object-cover"
+                  src={featureImage}
+                  alt="Noah Yahney performing modern magic and mentalism"
+                  fill
+                  priority
+                  sizes="(min-width: 1024px) 40vw, 80vw"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-[#07080a] via-transparent to-transparent" />
+              </div>
+            </div>
             <div
-              className="aspect-[4/5] bg-cover bg-center"
-              style={{
-                backgroundImage: `linear-gradient(180deg,rgba(8,8,6,0),rgba(8,8,6,0.82)),url('${featureImage}')`,
-              }}
-            />
-            <div className="mt-5 grid grid-cols-2 gap-3 text-[11px] uppercase tracking-[0.14em] text-zinc-400 sm:text-xs sm:tracking-[0.18em]">
-              {highlights.map((item) => (
-                <span key={item} className="border-t border-white/10 pt-3">
-                  {item}
-                </span>
-              ))}
+              className="float-slow absolute right-0 top-8 w-[38%] overflow-hidden rounded-2xl border border-white/15 bg-[#10100c]/80 p-2 shadow-2xl shadow-black/45"
+              style={{ "--rotate": "3deg" } as CSSProperties}
+            >
+              <div className="relative aspect-[4/5] overflow-hidden rounded-xl">
+                <Image
+                  className="object-cover opacity-90"
+                  src={heroCollage[0]}
+                  alt=""
+                  fill
+                  sizes="(min-width: 1024px) 18vw, 38vw"
+                />
+              </div>
+            </div>
+            <div
+              className="float-slower absolute bottom-8 right-6 w-[46%] overflow-hidden rounded-2xl border border-[#d9c58f]/25 bg-[#10100c]/85 p-2 shadow-2xl shadow-black/45 sm:right-10"
+              style={{ "--rotate": "-2deg" } as CSSProperties}
+            >
+              <div className="relative aspect-[5/4] overflow-hidden rounded-xl">
+                <Image
+                  className="object-cover opacity-90"
+                  src={heroCollage[1]}
+                  alt=""
+                  fill
+                  sizes="(min-width: 1024px) 22vw, 46vw"
+                />
+              </div>
+            </div>
+            <div
+              className="float-slow absolute bottom-2 left-[12%] w-[38%] overflow-hidden rounded-2xl border border-white/10 bg-[#10100c]/80 p-2 shadow-2xl shadow-black/40 sm:bottom-12"
+              style={{ "--rotate": "1deg" } as CSSProperties}
+            >
+              <div className="relative aspect-[5/4] overflow-hidden rounded-xl">
+                <Image
+                  className="object-cover opacity-90"
+                  src={heroCollage[2]}
+                  alt=""
+                  fill
+                  sizes="(min-width: 1024px) 18vw, 38vw"
+                />
+              </div>
             </div>
           </div>
         </div>
       </section>
 
-      <section className="px-5 py-10 sm:px-8 sm:py-12">
-        <div className="mx-auto grid max-w-7xl gap-4 border-y border-white/10 py-6 sm:grid-cols-3">
+      <section className="scroll-reveal px-5 py-12 sm:px-8 sm:py-16">
+        <div className="mx-auto grid max-w-7xl gap-8 border-y border-white/10 py-10 lg:grid-cols-[0.78fr_1.22fr] lg:items-center">
+          <p className="text-xs font-semibold uppercase tracking-[0.34em] text-[#d9c58f]">
+            About the experience
+          </p>
           <div>
-            <p className="text-3xl font-semibold text-zinc-50">15 years</p>
-            <p className="mt-2 text-sm uppercase tracking-[0.18em] text-zinc-500">
-              Professional experience
-            </p>
-          </div>
-          {reviews.slice(0, 2).map((review) => (
-            <blockquote key={review.name} className="text-sm leading-6 text-zinc-300">
-              <p>{review.quote}</p>
-              <footer className="mt-3 text-xs font-semibold uppercase tracking-[0.18em] text-[#d9c58f]">
-                5-star review - {review.name}
-              </footer>
-            </blockquote>
-          ))}
-        </div>
-      </section>
-
-      <section className="px-5 py-12 sm:px-8 sm:py-14">
-        <div className="mx-auto grid max-w-7xl gap-5 md:grid-cols-3">
-          {services.map((service) => (
-            <article
-              key={service.title}
-              className="border border-white/10 bg-[#10100c]/70 p-6 sm:p-7"
-            >
-              <h2 className="text-xl font-semibold text-zinc-50 sm:text-2xl">
-                {service.title}
-              </h2>
-              <p className="mt-4 leading-7 text-zinc-400">{service.body}</p>
-            </article>
-          ))}
-        </div>
-      </section>
-
-      <section id="watch" className="px-5 py-12 sm:px-8 sm:py-14">
-        <div className="mx-auto max-w-7xl">
-          <div className="max-w-3xl">
-            <p className="text-xs font-semibold uppercase tracking-[0.36em] text-[#d9c58f]">
-              Watch
-            </p>
-            <h2 className="mt-4 text-3xl font-semibold text-zinc-50 sm:mt-5 sm:text-5xl">
-              See the energy in motion.
+            <h2 className="text-3xl font-semibold leading-tight text-zinc-50 sm:text-5xl">
+              Entertainment that feels{" "}
+              <span className="rotating-word text-[#d9c58f]">
+                <span className="block">personal</span>
+                <span className="block">impossible</span>
+                <span className="block">unforgettable</span>
+                <span className="block">effortless</span>
+              </span>
             </h2>
+            <p className="mt-5 text-base leading-8 text-zinc-300 sm:text-lg">
+              Not a stage show. Not a scripted routine. Noah creates
+              interactive, close-up moments that happen inches away from your
+              guests, making the entertainment feel personal, spontaneous, and
+              impossible.
+            </p>
           </div>
-          <div className="mt-8 grid gap-6 lg:grid-cols-[1.35fr_0.65fr] lg:items-center">
+        </div>
+      </section>
+
+      <section className="scroll-reveal px-5 py-5 sm:px-8">
+        <div className="mx-auto flex max-w-7xl flex-wrap justify-center gap-x-4 gap-y-3 border-y border-white/10 bg-white/[0.025] px-5 py-5 text-center text-xs font-semibold uppercase tracking-[0.2em] text-zinc-300 sm:gap-x-6">
+          {trustItems.map((item) => (
+            <span key={item}>{item}</span>
+          ))}
+        </div>
+      </section>
+
+      <section id="watch" className="scroll-reveal px-5 py-12 sm:px-8 sm:py-16">
+        <div className="mx-auto max-w-7xl">
+          <div className="mb-8 flex flex-col gap-4 sm:flex-row sm:items-end sm:justify-between">
+            <div>
+              <p className="text-xs font-semibold uppercase tracking-[0.34em] text-[#d9c58f]">
+                Watch
+              </p>
+              <h2 className="mt-4 text-3xl font-semibold text-zinc-50 sm:text-5xl">
+                See the reactions.
+              </h2>
+              <p className="mt-4 max-w-2xl text-base leading-7 text-zinc-400">
+                A glimpse at the energy, surprise, and shared moments Noah
+                brings to live events.
+              </p>
+            </div>
+          </div>
+          <div className="grid gap-6 lg:grid-cols-[1.35fr_0.65fr] lg:items-center">
             {featuredVideos.map((video) => (
               <figure
                 key={video.embedUrl}
-                className={`border border-white/10 bg-[#10100c]/70 p-3 shadow-2xl shadow-black/30 sm:p-4 ${
+                className={`group border border-white/10 bg-[#10100c]/75 p-3 shadow-2xl shadow-black/40 transition hover:border-[#d9c58f]/40 sm:p-4 ${
                   video.aspect === "vertical"
-                    ? "mx-auto w-full max-w-[330px] rounded-[2rem] border-white/15 bg-[#070706] p-3 sm:max-w-[360px]"
+                    ? "mx-auto w-full max-w-[330px] rounded-[2rem] border-white/15 bg-[#07080a] p-3 sm:max-w-[365px]"
                     : ""
                 }`}
               >
@@ -194,7 +259,7 @@ export default function Home() {
                   />
                 </div>
                 <figcaption
-                  className={`mt-4 text-sm font-semibold uppercase tracking-[0.18em] text-[#d9c58f] sm:tracking-[0.22em] ${
+                  className={`mt-4 text-sm font-semibold uppercase tracking-[0.2em] text-[#d9c58f] ${
                     video.aspect === "vertical" ? "text-center" : ""
                   }`}
                 >
@@ -206,43 +271,142 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="px-5 py-12 sm:px-8 sm:py-14">
-        <div className="mx-auto flex max-w-7xl flex-col gap-8 border-y border-white/10 py-10 lg:flex-row lg:items-center lg:justify-between">
-          <p className="max-w-4xl text-2xl font-medium leading-tight text-zinc-100 sm:text-5xl">
-            Whether performing table to table or strolling through the crowd,
-            Noah performs illusions your guests have never seen before.
-          </p>
-          <Link
-            href="/contact"
-            className="inline-flex h-12 shrink-0 items-center justify-center bg-[#d9c58f] px-6 text-sm font-semibold uppercase tracking-[0.16em] text-black transition hover:bg-zinc-100 sm:px-7"
-          >
-            Check Availability
-          </Link>
+      <section className="scroll-reveal px-5 py-12 sm:px-8 sm:py-16">
+        <div className="mx-auto max-w-7xl">
+          <div className="max-w-3xl">
+            <p className="text-xs font-semibold uppercase tracking-[0.34em] text-[#d9c58f]">
+              Events
+            </p>
+            <h2 className="mt-4 text-3xl font-semibold text-zinc-50 sm:text-5xl">
+              Built for rooms where experience matters.
+            </h2>
+          </div>
+          <div className="mt-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+            {eventTypes.map((eventType) => (
+              <article
+                className="lift-glow group border border-white/10 bg-[linear-gradient(145deg,rgba(255,255,255,0.055),rgba(255,255,255,0.015))] p-6 hover:border-[#d9c58f]/45 hover:bg-white/[0.06]"
+                key={eventType.title}
+              >
+                <div className="mb-7 h-px w-12 bg-[#d9c58f]" />
+                <h3 className="text-2xl font-semibold text-zinc-50">
+                  {eventType.title}
+                </h3>
+                <p className="mt-4 text-sm leading-6 text-zinc-400">
+                  {eventType.body}
+                </p>
+              </article>
+            ))}
+          </div>
         </div>
       </section>
 
-      <section className="px-5 py-12 sm:px-8 sm:py-14">
-        <div className="mx-auto grid max-w-7xl gap-8 lg:grid-cols-[0.85fr_1.15fr] lg:items-center">
-          <div>
-            <p className="text-xs font-semibold uppercase tracking-[0.36em] text-[#d9c58f]">
-              The experience
+      <section className="scroll-reveal px-5 py-12 sm:px-8 sm:py-16">
+        <div className="mx-auto max-w-7xl">
+          <div className="mb-8 max-w-3xl">
+            <p className="text-xs font-semibold uppercase tracking-[0.34em] text-[#d9c58f]">
+              Testimonials
             </p>
-            <h2 className="mt-4 text-3xl font-semibold text-zinc-50 sm:mt-5 sm:text-5xl">
-              Shared moments that turn into the thing everyone talks about.
+            <h2 className="mt-4 text-3xl font-semibold text-zinc-50 sm:text-5xl">
+              Trusted by hosts who need the room to come alive.
             </h2>
           </div>
-          <div className="grid gap-4 sm:grid-cols-3">
-            {reviews.map((review) => (
+          <div className="grid gap-4 lg:grid-cols-3">
+            {testimonials.map((review) => (
               <blockquote
                 key={review.name}
-                className="border-l border-[#d9c58f] bg-[#10100c]/60 p-5 text-base leading-7 text-zinc-300 sm:p-6"
+                className="lift-glow border border-white/10 bg-[#10100c]/70 p-6 text-base leading-7 text-zinc-300 hover:border-[#d9c58f]/35"
               >
+                <div
+                  className="mb-5 flex gap-1 text-[#d9c58f]"
+                  aria-label="5 out of 5 stars"
+                >
+                  {Array.from({ length: 5 }).map((_, index) => (
+                    <svg
+                      key={index}
+                      aria-hidden="true"
+                      className="size-4 fill-current"
+                      viewBox="0 0 20 20"
+                    >
+                      <path d="M10 1.7l2.4 5 5.5.8-4 3.9.9 5.5-4.8-2.6-4.8 2.6.9-5.5-4-3.9 5.5-.8L10 1.7z" />
+                    </svg>
+                  ))}
+                </div>
                 <p>{review.quote}</p>
-                <footer className="mt-5 text-xs font-semibold uppercase tracking-[0.22em] text-[#d9c58f]">
-                  5-star review - {review.name}
+                <footer className="mt-6 text-xs font-semibold uppercase tracking-[0.22em] text-[#d9c58f]">
+                  {review.name}
                 </footer>
               </blockquote>
             ))}
+          </div>
+          <div className="mt-8">
+            <a
+              className="inline-flex h-11 items-center justify-center border border-[#d9c58f]/35 px-5 text-xs font-semibold uppercase tracking-[0.18em] text-[#d9c58f] transition hover:bg-[#d9c58f] hover:text-black"
+              href={googleReviewsUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              See More Reviews on Google
+            </a>
+          </div>
+        </div>
+      </section>
+
+      <section className="scroll-reveal px-5 py-12 sm:px-8 sm:py-16">
+        <div className="mx-auto max-w-7xl">
+          <div className="mb-8 flex flex-col gap-4 sm:flex-row sm:items-end sm:justify-between">
+            <div>
+              <p className="text-xs font-semibold uppercase tracking-[0.34em] text-[#d9c58f]">
+                Gallery
+              </p>
+              <h2 className="mt-4 text-3xl font-semibold text-zinc-50 sm:text-5xl">
+                Moments with real energy.
+              </h2>
+            </div>
+            <Link
+              href="/gallery"
+              className="inline-flex h-11 items-center justify-center border border-white/15 px-5 text-xs font-semibold uppercase tracking-[0.18em] text-zinc-200 transition hover:border-[#d9c58f] hover:text-[#d9c58f]"
+            >
+              View Full Gallery
+            </Link>
+          </div>
+          <div className="grid auto-rows-[150px] grid-cols-2 gap-3 sm:auto-rows-[220px] lg:grid-cols-6">
+            {galleryPreview.map((image, index) => (
+              <div
+                key={image}
+                className={`relative overflow-hidden border border-white/10 bg-[#10100c] ${
+                  index === 0 || index === 4 ? "lg:col-span-2 lg:row-span-2" : ""
+                }`}
+              >
+                <Image
+                  className="object-cover opacity-85 transition duration-500 hover:scale-105 hover:opacity-100"
+                  src={image}
+                  alt=""
+                  fill
+                  loading="lazy"
+                  sizes="(min-width: 1024px) 33vw, 50vw"
+                />
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section className="scroll-reveal px-5 pb-16 pt-8 sm:px-8 sm:pb-24">
+        <div className="mx-auto max-w-7xl overflow-hidden border border-white/10 bg-[radial-gradient(circle_at_20%_0%,rgba(217,197,143,0.18),transparent_35%),linear-gradient(135deg,rgba(255,255,255,0.07),rgba(255,255,255,0.02))] px-6 py-10 sm:px-10 sm:py-14">
+          <div className="max-w-3xl">
+            <h2 className="text-3xl font-semibold text-zinc-50 sm:text-6xl">
+              Make your event unforgettable.
+            </h2>
+            <p className="mt-5 text-base leading-7 text-zinc-300 sm:text-lg">
+              Tell Noah about the date, location, and type of event. You&apos;ll
+              get availability and next steps.
+            </p>
+            <Link
+              href="/contact"
+              className="mt-8 inline-flex h-12 items-center justify-center bg-[#d9c58f] px-7 text-sm font-semibold uppercase tracking-[0.17em] text-black transition hover:bg-zinc-100"
+            >
+              Check Availability
+            </Link>
           </div>
         </div>
       </section>

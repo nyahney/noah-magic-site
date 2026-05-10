@@ -68,6 +68,17 @@ export function ContactForm() {
           />
         </label>
         <label className="grid gap-2 text-sm font-medium text-zinc-300">
+          Event Location
+          <input
+            className="h-12 w-full border border-white/10 bg-[#080806]/70 px-4 text-zinc-100 outline-none transition focus:border-[#d9c58f]"
+            name="event_location"
+            required
+            autoComplete="address-level2"
+          />
+        </label>
+      </div>
+      <div className="grid gap-5 sm:grid-cols-2">
+        <label className="grid gap-2 text-sm font-medium text-zinc-300">
           Event Type
           <select
             className="h-12 w-full border border-white/10 bg-[#080806]/70 px-4 text-zinc-100 outline-none transition focus:border-[#d9c58f]"
@@ -85,6 +96,16 @@ export function ContactForm() {
             <option>School or teen event</option>
             <option>Other</option>
           </select>
+        </label>
+        <label className="grid gap-2 text-sm font-medium text-zinc-300">
+          Estimated Guest Count
+          <input
+            className="h-12 w-full border border-white/10 bg-[#080806]/70 px-4 text-zinc-100 outline-none transition focus:border-[#d9c58f]"
+            name="estimated_guest_count"
+            type="number"
+            min="1"
+            inputMode="numeric"
+          />
         </label>
       </div>
       <label className="grid gap-2 text-sm font-medium text-zinc-300">

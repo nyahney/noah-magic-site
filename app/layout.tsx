@@ -41,16 +41,16 @@ export default function RootLayout({
       className={`${geistSans.variable} ${geistMono.variable} h-full scroll-pt-28 antialiased`}
     >
       <body className="min-h-full bg-background text-foreground">
-        <div className="fixed inset-0 -z-10 bg-[radial-gradient(circle_at_30%_0%,rgba(199,169,105,0.16),transparent_30%),radial-gradient(circle_at_85%_8%,rgba(22,48,66,0.32),transparent_34%),linear-gradient(140deg,#080806_0%,#12110d_45%,#071018_100%)]" />
+        <div className="fixed inset-0 -z-10 bg-[radial-gradient(circle_at_25%_0%,rgba(202,163,84,0.17),transparent_30%),radial-gradient(circle_at_88%_10%,rgba(73,93,161,0.28),transparent_34%),radial-gradient(circle_at_45%_80%,rgba(84,48,108,0.16),transparent_32%),linear-gradient(140deg,#07080a_0%,#11100c_44%,#07111b_100%)]" />
         <div className="cinematic-grain fixed inset-0 -z-10 opacity-35" />
-        <header className="sticky top-0 z-50 border-b border-white/10 bg-[#080806]/80 backdrop-blur-xl">
-          <nav className="mx-auto flex max-w-7xl items-center justify-between gap-4 px-4 py-3 sm:px-8 sm:py-4">
+        <header className="sticky top-0 z-50 border-b border-white/10 bg-[#07080a]/78 backdrop-blur-xl">
+          <nav className="mx-auto flex max-w-7xl items-center justify-between gap-3 px-4 py-3 sm:px-8 sm:py-4">
             <Link href="/" className="group inline-flex items-center gap-3">
-              <span className="text-sm font-semibold uppercase tracking-[0.26em] text-zinc-100 transition-colors group-hover:text-[#d9c58f] sm:text-lg sm:tracking-[0.32em]">
+              <span className="text-sm font-semibold uppercase tracking-[0.22em] text-zinc-100 transition-colors group-hover:text-[#d9c58f] sm:text-lg sm:tracking-[0.32em]">
                 Noah Yahney
               </span>
             </Link>
-            <div className="flex items-center gap-3 text-[11px] font-medium uppercase tracking-[0.14em] text-zinc-400 sm:gap-8 sm:text-xs sm:tracking-[0.22em]">
+            <div className="flex items-center gap-3 text-[11px] font-medium uppercase tracking-[0.13em] text-zinc-400 sm:gap-7 sm:text-xs sm:tracking-[0.2em]">
               <Link className="transition-colors hover:text-[#d9c58f]" href="/">
                 Home
               </Link>
@@ -61,7 +61,7 @@ export default function RootLayout({
                 Gallery
               </Link>
               <Link
-                className="transition-colors hover:text-[#d9c58f]"
+                className="border border-[#d9c58f]/45 bg-[#d9c58f]/10 px-3 py-2 text-[#d9c58f] transition hover:bg-[#d9c58f] hover:text-black sm:px-4"
                 href="/contact"
               >
                 Contact

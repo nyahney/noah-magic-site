@@ -16,8 +16,9 @@ const bookingDetails = [
 
 export default function ContactPage() {
   return (
-    <section className="px-5 py-12 sm:px-8 sm:py-20">
-      <div className="mx-auto grid max-w-7xl gap-10 lg:grid-cols-[0.9fr_1.1fr] lg:gap-12">
+    <section className="relative overflow-hidden px-5 py-12 sm:px-8 sm:py-20">
+      <div className="absolute inset-x-0 top-0 -z-10 h-96 bg-[radial-gradient(circle_at_20%_0%,rgba(217,197,143,0.16),transparent_34%),radial-gradient(circle_at_85%_10%,rgba(82,109,199,0.2),transparent_34%)]" />
+      <div className="mx-auto grid max-w-7xl gap-10 lg:grid-cols-[0.85fr_1.15fr] lg:gap-12">
         <div>
           <p className="text-xs font-semibold uppercase tracking-[0.36em] text-[#d9c58f]">
             Contact
@@ -34,7 +35,14 @@ export default function ContactPage() {
             beyond.
           </p>
 
-          <div className="mt-8 space-y-4 text-base sm:mt-10 sm:text-lg">
+          <div className="mt-8 border-y border-white/10 py-5">
+            <p className="text-3xl font-semibold text-zinc-50">15 years</p>
+            <p className="mt-2 text-xs font-semibold uppercase tracking-[0.22em] text-zinc-500">
+              Professional magic and mentalism
+            </p>
+          </div>
+
+          <div className="mt-8 space-y-4 text-base sm:text-lg">
             <a
               className="block border-b border-white/10 pb-4 text-zinc-100 transition hover:text-[#d9c58f]"
               href="mailto:noahyahney@gmail.com?subject=Event%20Booking%20Inquiry"
@@ -83,10 +91,13 @@ export default function ContactPage() {
           </div>
         </div>
 
-        <div className="border border-white/10 bg-[#10100c]/70 p-5 sm:p-8">
+        <div className="border border-white/10 bg-[#10100c]/75 p-5 shadow-2xl shadow-black/30 backdrop-blur sm:p-8">
           <h2 className="text-2xl font-semibold text-zinc-50">
             Booking inquiry
           </h2>
+          <p className="mt-3 text-sm leading-6 text-zinc-400">
+            Share the essentials and Noah will follow up directly.
+          </p>
           <ContactForm />
           <div className="mt-8 border-t border-white/10 pt-6">
             <p className="text-sm font-semibold uppercase tracking-[0.22em] text-zinc-500">

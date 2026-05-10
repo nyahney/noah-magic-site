@@ -25,68 +25,69 @@ const galleryItems: GalleryItem[] = [
     path: "/media/midwood-prom-2024-img-206.jpg",
   },
   {
-    path: "/media/0n9a4268.jpg",
+    path: "/media/close-up-performance-reaction.jpg",
   },
   {
-    path: "/media/3.jpg",
+    path: "/media/performance-room-reaction.jpg",
   },
   {
-    path: "/media/ehhh.jpg",
+    path: "/media/audience-reaction-wide.jpg",
     className: "md:col-span-2",
   },
   {
-    path: "/media/farber528a1486.jpg",
+    path: "/media/corporate-event-performance.jpg",
   },
   {
-    path: "/media/good.jpg",
+    path: "/media/guests-watching-magic.jpg",
     className: "md:row-span-2",
   },
   {
     path: "/media/great-reactions-2.jpg",
   },
   {
-    path: "/media/img-146.jpg",
+    path: "/media/guest-interaction-magic.jpg",
   },
   {
-    path: "/media/img-231.jpg",
+    path: "/media/event-guest-reaction.jpg",
   },
   {
-    path: "/media/img-353.jpg",
+    path: "/media/crowd-interaction-magic.jpg",
     className: "md:col-span-2",
   },
   {
-    path: "/media/img-366.jpg",
+    path: "/media/close-up-audience-reaction.jpg",
   },
   {
-    path: "/media/img-814.jpg",
+    path: "/media/sleight-of-hand-performance.jpg",
   },
   {
-    path: "/media/img-916.jpg",
+    path: "/media/mind-reading-performance.jpg",
   },
   {
-    path: "/media/img-1037.jpg",
+    path: "/media/private-event-magic.jpg",
   },
   {
     path: "/media/standstill-adult-shot-crop-guy-on-right.jpg",
     className: "md:col-span-2",
   },
   {
-    path: "/media/okay.jpg",
+    path: "/media/close-up-event-moment.jpg",
   },
   {
-    path: "/media/use.jpg",
+    path: "/media/interactive-magic-moment.jpg",
   },
   {
-    path: "/media/use-12.jpg",
+    path: "/media/table-side-magic-reaction.jpg",
   },
   {
-    path: "/media/use-2.jpg",
+    path: "/media/close-up-sleight-of-hand.jpg",
   },
 ];
 
 export default function GalleryPage() {
   return (
-    <section className="px-5 py-12 sm:px-8 sm:py-20">
+    <section className="relative overflow-hidden px-5 py-12 sm:px-8 sm:py-20">
+      <div className="absolute inset-x-0 top-0 -z-10 h-80 bg-[radial-gradient(circle_at_20%_0%,rgba(217,197,143,0.16),transparent_34%),radial-gradient(circle_at_90%_0%,rgba(82,109,199,0.18),transparent_34%)]" />
       <div className="mx-auto max-w-7xl">
         <div className="max-w-3xl">
           <p className="text-xs font-semibold uppercase tracking-[0.36em] text-[#d9c58f]">
@@ -101,14 +102,14 @@ export default function GalleryPage() {
           </p>
         </div>
 
-        <div className="mt-10 grid auto-rows-[190px] grid-cols-2 gap-3 sm:auto-rows-[250px] sm:gap-4 md:grid-cols-4">
+        <div className="mt-10 grid auto-rows-[185px] grid-cols-2 gap-3 sm:auto-rows-[250px] sm:gap-4 md:grid-cols-4">
           {galleryItems.map((item) => (
             <article
               key={item.path}
-              className={`group relative overflow-hidden border border-white/10 bg-[#10100c] ${item.className ?? ""}`}
+              className={`group relative overflow-hidden border border-white/10 bg-[#10100c] shadow-xl shadow-black/20 transition hover:-translate-y-1 hover:border-[#d9c58f]/35 ${item.className ?? ""}`}
             >
               <Image
-                className="absolute inset-0 object-cover opacity-85 transition duration-500 group-hover:scale-105 group-hover:opacity-100"
+                className="absolute inset-0 object-cover opacity-85 transition duration-700 group-hover:scale-105 group-hover:opacity-100"
                 src={item.path}
                 alt=""
                 fill

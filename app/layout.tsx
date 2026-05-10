@@ -84,9 +84,36 @@ export default function RootLayout({
             </div>
             <div className="flex flex-wrap gap-5 uppercase tracking-[0.22em]">
               <a
-                className="hover:text-[#d9c58f]"
-                href="https://www.instagram.com/magicofnoah"
+                className="inline-flex items-center gap-2 hover:text-[#d9c58f]"
+                href="https://www.instagram.com/magicofnoah/"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Follow Noah Yahney on Instagram"
               >
+                <svg
+                  aria-hidden="true"
+                  className="size-4"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                >
+                  <rect
+                    width="17"
+                    height="17"
+                    x="3.5"
+                    y="3.5"
+                    rx="5"
+                    stroke="currentColor"
+                    strokeWidth="1.6"
+                  />
+                  <circle
+                    cx="12"
+                    cy="12"
+                    r="3.5"
+                    stroke="currentColor"
+                    strokeWidth="1.6"
+                  />
+                  <circle cx="17" cy="7" r="1.1" fill="currentColor" />
+                </svg>
                 @magicofnoah
               </a>
               <a className="hover:text-[#d9c58f]" href="mailto:noahyahney@gmail.com">

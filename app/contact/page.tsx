@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { ContactForm } from "./contact-form";
 
 export const metadata: Metadata = {
   title: "Contact",
@@ -43,9 +44,36 @@ export default function ContactPage() {
               (516) 781-4700
             </a>
             <a
-              className="block border-b border-white/10 pb-4 text-zinc-100 transition hover:text-[#d9c58f]"
-              href="https://www.instagram.com/magicofnoah"
+              className="flex items-center gap-3 border-b border-white/10 pb-4 text-zinc-100 transition hover:text-[#d9c58f]"
+              href="https://www.instagram.com/magicofnoah/"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Follow Noah Yahney on Instagram"
             >
+              <svg
+                aria-hidden="true"
+                className="size-5 text-[#d9c58f]"
+                fill="none"
+                viewBox="0 0 24 24"
+              >
+                <rect
+                  width="17"
+                  height="17"
+                  x="3.5"
+                  y="3.5"
+                  rx="5"
+                  stroke="currentColor"
+                  strokeWidth="1.6"
+                />
+                <circle
+                  cx="12"
+                  cy="12"
+                  r="3.5"
+                  stroke="currentColor"
+                  strokeWidth="1.6"
+                />
+                <circle cx="17" cy="7" r="1.1" fill="currentColor" />
+              </svg>
               @magicofnoah
             </a>
           </div>
@@ -55,42 +83,7 @@ export default function ContactPage() {
           <h2 className="text-2xl font-semibold text-zinc-50">
             Booking inquiry
           </h2>
-          <form
-            className="mt-8 grid gap-5"
-            action="mailto:noahyahney@gmail.com"
-            method="post"
-            encType="text/plain"
-          >
-            {/* TODO: Connect this static form to Formspree, Vercel Forms, or another booking workflow for browser-native submissions. */}
-            <label className="grid gap-2 text-sm font-medium text-zinc-300">
-              Name
-              <input
-                className="h-12 border border-white/10 bg-black/50 px-4 text-zinc-100 outline-none transition focus:border-[#d9c58f]"
-                name="name"
-              />
-            </label>
-            <label className="grid gap-2 text-sm font-medium text-zinc-300">
-              Email
-              <input
-                className="h-12 border border-white/10 bg-black/50 px-4 text-zinc-100 outline-none transition focus:border-[#d9c58f]"
-                name="email"
-                type="email"
-              />
-            </label>
-            <label className="grid gap-2 text-sm font-medium text-zinc-300">
-              Event details
-              <textarea
-                className="min-h-36 resize-y border border-white/10 bg-black/50 p-4 text-zinc-100 outline-none transition focus:border-[#d9c58f]"
-                name="event_details"
-              />
-            </label>
-            <button
-              className="h-12 bg-[#d9c58f] px-7 text-sm font-semibold uppercase tracking-[0.18em] text-black transition hover:bg-zinc-100"
-              type="submit"
-            >
-              Prepare inquiry
-            </button>
-          </form>
+          <ContactForm />
           <div className="mt-8 border-t border-white/10 pt-6">
             <p className="text-sm font-semibold uppercase tracking-[0.22em] text-zinc-500">
               Helpful to include

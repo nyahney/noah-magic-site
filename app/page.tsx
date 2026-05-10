@@ -40,17 +40,18 @@ const reviews = [
   },
 ];
 
-const heroVideo = "/media/final-rev-real.mp4";
 const featureImage = "/media/main-picture.jpg";
 
 const featuredVideos = [
   {
     caption: "Magic of Noah Sizzle Reel",
-    path: "/media/final-rev-real.mp4",
+    embedUrl: "https://www.youtube.com/embed/qsaYrkshqNM",
+    aspect: "wide",
   },
   {
     caption: "Halloween Magic",
-    path: "/media/magic-of-noah-halloween-2023-v1.mp4",
+    embedUrl: "https://www.youtube.com/embed/dG-3d_IDq1o",
+    aspect: "vertical",
   },
 ];
 
@@ -58,16 +59,11 @@ export default function Home() {
   return (
     <>
       <section className="relative overflow-hidden px-5 py-20 sm:px-8 sm:py-28 lg:py-36">
-        <video
-          className="absolute inset-x-0 top-0 -z-20 h-[760px] w-full object-cover opacity-75"
-          src={heroVideo}
-          poster={featureImage}
-          autoPlay
-          muted
-          loop
-          playsInline
-          preload="auto"
-          aria-hidden="true"
+        <div
+          className="absolute inset-x-0 top-0 -z-20 h-[760px] bg-cover bg-center opacity-75"
+          style={{
+            backgroundImage: `linear-gradient(rgba(5,5,5,0.2),rgba(5,5,5,0.7)),url('${featureImage}')`,
+          }}
         />
         <div className="absolute inset-x-0 top-0 -z-10 h-[760px] bg-[linear-gradient(90deg,#050505_0%,rgba(5,5,5,0.7)_38%,rgba(5,5,5,0.2)_100%),linear-gradient(180deg,rgba(5,5,5,0.1)_0%,#050505_92%)]" />
         <div className="mx-auto grid max-w-7xl gap-12 lg:grid-cols-[1.1fr_0.9fr] lg:items-end">
@@ -142,20 +138,37 @@ export default function Home() {
               See the energy in motion.
             </h2>
           </div>
-          <div className="mt-10 grid gap-6 lg:grid-cols-2">
+          <div className="mt-10 grid gap-6 lg:grid-cols-[1.35fr_0.65fr] lg:items-center">
             {featuredVideos.map((video) => (
               <figure
-                key={video.path}
-                className="border border-white/10 bg-white/[0.03] p-4"
+                key={video.embedUrl}
+                className={`border border-white/10 bg-white/[0.03] p-4 shadow-2xl shadow-black/30 ${
+                  video.aspect === "vertical"
+                    ? "mx-auto w-full max-w-[360px] rounded-[2rem] border-white/15 bg-black p-3"
+                    : ""
+                }`}
               >
-                <video
-                  className="aspect-video w-full bg-black object-cover"
-                  src={video.path}
-                  controls
-                  preload="metadata"
-                  playsInline
-                />
-                <figcaption className="mt-4 text-sm font-semibold uppercase tracking-[0.22em] text-[#d9c58f]">
+                <div
+                  className={`overflow-hidden bg-black ${
+                    video.aspect === "vertical"
+                      ? "aspect-[9/16] rounded-[1.45rem]"
+                      : "aspect-video"
+                  }`}
+                >
+                  <iframe
+                    className="h-full w-full"
+                    src={video.embedUrl}
+                    title={video.caption}
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                    referrerPolicy="strict-origin-when-cross-origin"
+                    allowFullScreen
+                  />
+                </div>
+                <figcaption
+                  className={`mt-4 text-sm font-semibold uppercase tracking-[0.22em] text-[#d9c58f] ${
+                    video.aspect === "vertical" ? "text-center" : ""
+                  }`}
+                >
                   {video.caption}
                 </figcaption>
               </figure>

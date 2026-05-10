@@ -17,7 +17,7 @@ const bookingDetails = [
 export default function ContactPage() {
   return (
     <section className="relative overflow-hidden px-5 py-12 sm:px-8 sm:py-20">
-      <div className="absolute inset-x-0 top-0 -z-10 h-96 bg-[radial-gradient(circle_at_20%_0%,rgba(217,197,143,0.16),transparent_34%),radial-gradient(circle_at_85%_10%,rgba(82,109,199,0.2),transparent_34%)]" />
+      <div className="absolute inset-x-0 top-0 -z-10 h-[32rem] bg-[radial-gradient(circle_at_20%_0%,rgba(217,197,143,0.13),transparent_42%),radial-gradient(circle_at_85%_10%,rgba(82,109,199,0.15),transparent_42%)] [mask-image:linear-gradient(to_bottom,black_0%,black_58%,transparent_100%)]" />
       <div className="mx-auto grid max-w-7xl gap-10 lg:grid-cols-[0.85fr_1.15fr] lg:gap-12">
         <div>
           <p className="text-xs font-semibold uppercase tracking-[0.36em] text-[#d9c58f]">

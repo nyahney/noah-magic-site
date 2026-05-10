@@ -2,7 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 import type { CSSProperties } from "react";
 
-const featureImage = "/media/main-picture.jpg";
+const featureImage = "/media/new-website-main-pic.jpg";
 
 const trustItems = [
   "15 Years Experience",
@@ -89,9 +89,8 @@ const googleReviewsUrl =
 
 export default function Home() {
   return (
-    <>
-      <section className="relative overflow-hidden px-5 py-12 sm:px-8 sm:py-18 lg:py-24">
-        <div className="hero-ambient absolute inset-0 -z-20 bg-[radial-gradient(circle_at_16%_18%,rgba(204,163,86,0.25),transparent_28%),radial-gradient(circle_at_88%_14%,rgba(82,109,199,0.26),transparent_32%)]" />
+    <div className="home-canvas">
+      <section className="relative overflow-hidden px-5 py-14 sm:px-8 sm:py-20 lg:py-28">
         <div className="light-sweep pointer-events-none absolute inset-0 -z-10" />
         <div className="mx-auto grid max-w-7xl gap-8 lg:grid-cols-[0.95fr_1.05fr] lg:items-center">
           <div className="reveal max-w-3xl">
@@ -108,13 +107,13 @@ export default function Home() {
             <div className="mt-8 flex flex-col gap-3 sm:flex-row">
               <Link
                 href="/contact"
-                className="inline-flex h-12 items-center justify-center bg-[#d9c58f] px-7 text-sm font-semibold uppercase tracking-[0.17em] text-black transition hover:bg-zinc-100 hover:shadow-[0_0_28px_rgba(217,197,143,0.2)]"
+                className="cta-glow inline-flex h-12 items-center justify-center bg-[#d9c58f] px-7 text-sm font-semibold uppercase tracking-[0.17em] text-black transition hover:bg-zinc-100"
               >
                 Check Availability
               </Link>
               <Link
                 href="#watch"
-                className="inline-flex h-12 items-center justify-center border border-white/20 bg-white/[0.03] px-7 text-sm font-semibold uppercase tracking-[0.17em] text-zinc-100 transition hover:border-[#d9c58f] hover:text-[#d9c58f]"
+                className="cta-glow inline-flex h-12 items-center justify-center border border-white/20 bg-white/[0.03] px-7 text-sm font-semibold uppercase tracking-[0.17em] text-zinc-100 transition hover:border-[#d9c58f] hover:text-[#d9c58f]"
               >
                 Watch the Reel
               </Link>
@@ -122,7 +121,7 @@ export default function Home() {
           </div>
 
           <div className="reveal-delay relative min-h-[430px] sm:min-h-[620px]">
-            <div className="absolute -inset-6 -z-10 bg-[radial-gradient(circle,rgba(217,197,143,0.2),transparent_56%)] blur-2xl" />
+            <div className="absolute -inset-8 -z-10 bg-[radial-gradient(circle_at_45%_35%,rgba(217,197,143,0.24),transparent_54%),radial-gradient(circle_at_80%_18%,rgba(82,109,199,0.16),transparent_44%)] blur-2xl" />
             <div className="absolute left-0 top-0 w-[74%] overflow-hidden rounded-[1.4rem] border border-white/10 bg-[#10100c]/70 p-2 shadow-2xl shadow-black/50 sm:p-3">
               <div className="relative aspect-[4/5] overflow-hidden rounded-[1rem]">
                 <Image
@@ -182,62 +181,67 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="scroll-reveal px-5 py-12 sm:px-8 sm:py-16">
-        <div className="mx-auto grid max-w-7xl gap-8 border-y border-white/10 py-10 lg:grid-cols-[0.78fr_1.22fr] lg:items-center">
-          <p className="text-xs font-semibold uppercase tracking-[0.34em] text-[#d9c58f]">
-            About the experience
-          </p>
-          <div>
-            <h2 className="text-3xl font-semibold leading-tight text-zinc-50 sm:text-5xl">
-              Entertainment that feels{" "}
-              <span className="rotating-word text-[#d9c58f]">
-                <span className="block">personal</span>
-                <span className="block">impossible</span>
-                <span className="block">unforgettable</span>
-                <span className="block">effortless</span>
-              </span>
-            </h2>
-            <p className="mt-5 text-base leading-8 text-zinc-300 sm:text-lg">
-              Not a stage show. Not a scripted routine. Noah creates
-              interactive, close-up moments that happen inches away from your
-              guests, making the entertainment feel personal, spontaneous, and
-              impossible.
+      <section className="scroll-reveal px-5 py-16 sm:px-8 sm:py-24">
+        <div className="mx-auto max-w-7xl">
+          <div className="max-w-5xl">
+            <p className="text-xs font-semibold uppercase tracking-[0.34em] text-[#d9c58f]">
+              About the experience
             </p>
+            <h2 className="mt-5 text-3xl font-semibold leading-tight text-zinc-50 sm:text-5xl">
+                Entertainment that feels{" "}
+                <span className="rotating-word text-[#d9c58f]">
+                  <span className="block">personal</span>
+                  <span className="block">impossible</span>
+                  <span className="block">unforgettable</span>
+                  <span className="block">effortless</span>
+                </span>
+              </h2>
+              <p className="mt-5 max-w-3xl text-base leading-8 text-zinc-300 sm:text-lg">
+                Not a stage show. Not a scripted routine. Noah creates
+                interactive, close-up moments that happen inches away from your
+                guests, making the entertainment feel personal, spontaneous, and
+                impossible.
+              </p>
           </div>
         </div>
       </section>
 
-      <section className="scroll-reveal px-5 py-5 sm:px-8">
-        <div className="mx-auto flex max-w-7xl flex-wrap justify-center gap-x-4 gap-y-3 border-y border-white/10 bg-white/[0.025] px-5 py-5 text-center text-xs font-semibold uppercase tracking-[0.2em] text-zinc-300 sm:gap-x-6">
+      <section className="scroll-reveal px-5 py-8 sm:px-8 sm:py-10">
+        <div className="mx-auto flex max-w-7xl flex-wrap justify-center gap-x-4 gap-y-3 border-y border-white/10 px-5 py-6 text-center text-xs font-semibold uppercase tracking-[0.2em] text-zinc-300 sm:gap-x-6">
           {trustItems.map((item) => (
             <span key={item}>{item}</span>
           ))}
         </div>
       </section>
 
-      <section id="watch" className="scroll-reveal px-5 py-12 sm:px-8 sm:py-16">
-        <div className="mx-auto max-w-7xl">
+      <section
+        id="watch"
+        className="scroll-reveal px-5 py-16 sm:px-8 sm:py-24"
+      >
+        <div className="localized-glow mx-auto max-w-7xl">
           <div className="mb-8 flex flex-col gap-4 sm:flex-row sm:items-end sm:justify-between">
             <div>
-              <p className="text-xs font-semibold uppercase tracking-[0.34em] text-[#d9c58f]">
+              <p className="stagger-in text-xs font-semibold uppercase tracking-[0.34em] text-[#d9c58f]">
                 Watch
               </p>
-              <h2 className="mt-4 text-3xl font-semibold text-zinc-50 sm:text-5xl">
+              <h2 className="stagger-in stagger-1 mt-4 text-3xl font-semibold text-zinc-50 sm:text-5xl">
                 See the reactions.
               </h2>
-              <p className="mt-4 max-w-2xl text-base leading-7 text-zinc-400">
+              <p className="stagger-in stagger-2 mt-4 max-w-2xl text-base leading-7 text-zinc-400">
                 A glimpse at the energy, surprise, and shared moments Noah
                 brings to live events.
               </p>
             </div>
           </div>
           <div className="grid gap-6 lg:grid-cols-[1.35fr_0.65fr] lg:items-center">
-            {featuredVideos.map((video) => (
+            {featuredVideos.map((video, index) => (
               <figure
                 key={video.embedUrl}
-                className={`group border border-white/10 bg-[#10100c]/75 p-3 shadow-2xl shadow-black/40 transition hover:border-[#d9c58f]/40 sm:p-4 ${
+                className={`premium-frame stagger-in ${
+                  index === 0 ? "stagger-2" : "stagger-3"
+                } media-card group border border-white/15 bg-[#10100c]/86 p-3 shadow-2xl shadow-black/40 transition hover:border-[#d9c58f]/50 sm:p-4 ${
                   video.aspect === "vertical"
-                    ? "mx-auto w-full max-w-[330px] rounded-[2rem] border-white/15 bg-[#07080a] p-3 sm:max-w-[365px]"
+                    ? "mx-auto w-full max-w-[330px] rounded-[2rem] border-white/20 bg-[#07080a] p-3 sm:max-w-[365px]"
                     : ""
                 }`}
               >
@@ -271,7 +275,7 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="scroll-reveal px-5 py-12 sm:px-8 sm:py-16">
+      <section className="scroll-reveal px-5 py-16 sm:px-8 sm:py-20">
         <div className="mx-auto max-w-7xl">
           <div className="max-w-3xl">
             <p className="text-xs font-semibold uppercase tracking-[0.34em] text-[#d9c58f]">
@@ -300,8 +304,8 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="scroll-reveal px-5 py-12 sm:px-8 sm:py-16">
-        <div className="mx-auto max-w-7xl">
+      <section className="scroll-reveal px-5 py-16 sm:px-8 sm:py-20">
+        <div className="warm-trust-glow mx-auto max-w-7xl">
           <div className="mb-8 max-w-3xl">
             <p className="text-xs font-semibold uppercase tracking-[0.34em] text-[#d9c58f]">
               Testimonials
@@ -314,10 +318,10 @@ export default function Home() {
             {testimonials.map((review) => (
               <blockquote
                 key={review.name}
-                className="lift-glow border border-white/10 bg-[#10100c]/70 p-6 text-base leading-7 text-zinc-300 hover:border-[#d9c58f]/35"
+                className="lift-glow border border-white/10 bg-[#10100c]/72 p-6 text-base leading-7 text-zinc-300 hover:border-[#d9c58f]/40 hover:shadow-[0_0_38px_rgba(217,197,143,0.08)]"
               >
                 <div
-                  className="mb-5 flex gap-1 text-[#d9c58f]"
+                  className="mb-5 flex gap-1 text-[#d9c58f] drop-shadow-[0_0_10px_rgba(217,197,143,0.2)]"
                   aria-label="5 out of 5 stars"
                 >
                   {Array.from({ length: 5 }).map((_, index) => (
@@ -351,9 +355,9 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="scroll-reveal px-5 py-12 sm:px-8 sm:py-16">
+      <section className="scroll-reveal px-5 py-16 sm:px-8 sm:py-20">
         <div className="mx-auto max-w-7xl">
-          <div className="mb-8 flex flex-col gap-4 sm:flex-row sm:items-end sm:justify-between">
+          <div className="mb-8 max-w-3xl">
             <div>
               <p className="text-xs font-semibold uppercase tracking-[0.34em] text-[#d9c58f]">
                 Gallery
@@ -362,18 +366,12 @@ export default function Home() {
                 Moments with real energy.
               </h2>
             </div>
-            <Link
-              href="/gallery"
-              className="inline-flex h-11 items-center justify-center border border-white/15 px-5 text-xs font-semibold uppercase tracking-[0.18em] text-zinc-200 transition hover:border-[#d9c58f] hover:text-[#d9c58f]"
-            >
-              View Full Gallery
-            </Link>
           </div>
           <div className="grid auto-rows-[150px] grid-cols-2 gap-3 sm:auto-rows-[220px] lg:grid-cols-6">
             {galleryPreview.map((image, index) => (
               <div
                 key={image}
-                className={`relative overflow-hidden border border-white/10 bg-[#10100c] ${
+                className={`lift-glow relative overflow-hidden border border-white/10 bg-[#10100c] hover:border-[#d9c58f]/30 ${
                   index === 0 || index === 4 ? "lg:col-span-2 lg:row-span-2" : ""
                 }`}
               >
@@ -388,11 +386,19 @@ export default function Home() {
               </div>
             ))}
           </div>
+          <div className="mt-8 flex justify-center">
+            <Link
+              href="/gallery"
+              className="cta-glow inline-flex h-11 items-center justify-center border border-white/15 px-5 text-xs font-semibold uppercase tracking-[0.18em] text-zinc-200 transition hover:border-[#d9c58f] hover:text-[#d9c58f]"
+            >
+              View Full Gallery
+            </Link>
+          </div>
         </div>
       </section>
 
-      <section className="scroll-reveal px-5 pb-16 pt-8 sm:px-8 sm:pb-24">
-        <div className="mx-auto max-w-7xl overflow-hidden border border-white/10 bg-[radial-gradient(circle_at_20%_0%,rgba(217,197,143,0.18),transparent_35%),linear-gradient(135deg,rgba(255,255,255,0.07),rgba(255,255,255,0.02))] px-6 py-10 sm:px-10 sm:py-14">
+      <section className="scroll-reveal px-5 pb-20 pt-10 sm:px-8 sm:pb-28">
+        <div className="final-cta-panel closing-glow mx-auto max-w-7xl overflow-hidden border border-[#d9c58f]/42 bg-[linear-gradient(135deg,rgba(255,255,255,0.16),rgba(255,255,255,0.065))] px-6 py-10 shadow-2xl shadow-black/25 sm:px-10 sm:py-14">
           <div className="max-w-3xl">
             <h2 className="text-3xl font-semibold text-zinc-50 sm:text-6xl">
               Make your event unforgettable.
@@ -403,13 +409,13 @@ export default function Home() {
             </p>
             <Link
               href="/contact"
-              className="mt-8 inline-flex h-12 items-center justify-center bg-[#d9c58f] px-7 text-sm font-semibold uppercase tracking-[0.17em] text-black transition hover:bg-zinc-100"
+              className="cta-glow mt-8 inline-flex h-12 items-center justify-center bg-[#ead39a] px-7 text-sm font-semibold uppercase tracking-[0.17em] text-black transition hover:bg-[#f2e0b5]"
             >
               Check Availability
             </Link>
           </div>
         </div>
       </section>
-    </>
+    </div>
   );
 }

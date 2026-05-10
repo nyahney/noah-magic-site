@@ -18,6 +18,18 @@ body {
   font-family: var(--font-geist-sans), Arial, Helvetica, sans-serif;
 }
 
+:where(main, footer) .text-zinc-400 {
+  color: #d7d3ca;
+}
+
+:where(main, footer) .text-zinc-300 {
+  color: #e5ded2;
+}
+
+:where(main, footer) .text-zinc-200 {
+  color: #f0ece4;
+}
+
 ::selection {
   background: #c7a969;
   color: #080806;
@@ -64,12 +76,178 @@ html {
   background-size: 220% 100%;
 }
 
+.home-canvas {
+  isolation: isolate;
+  overflow: hidden;
+  position: relative;
+}
+
+.home-canvas::before {
+  animation: ambient-shift 34s ease-in-out infinite alternate;
+  background:
+    radial-gradient(circle at 16% 14%, rgba(217, 197, 143, 0.13), transparent 24%),
+    radial-gradient(circle at 86% 28%, rgba(82, 109, 199, 0.13), transparent 26%),
+    radial-gradient(circle at 22% 58%, rgba(115, 74, 140, 0.08), transparent 24%),
+    radial-gradient(circle at 82% 78%, rgba(217, 197, 143, 0.08), transparent 22%),
+    linear-gradient(155deg, rgba(7, 8, 10, 0), rgba(12, 15, 20, 0.36) 45%, rgba(7, 8, 10, 0));
+  content: "";
+  inset: -6% 0;
+  pointer-events: none;
+  position: absolute;
+  z-index: -2;
+}
+
+.home-canvas::after {
+  animation: light-sweep 30s ease-in-out infinite;
+  background: linear-gradient(
+    112deg,
+    transparent 0%,
+    transparent 44%,
+    rgba(217, 197, 143, 0.035) 50%,
+    rgba(82, 109, 199, 0.03) 55%,
+    transparent 66%,
+    transparent 100%
+  );
+  background-size: 260% 100%;
+  content: "";
+  inset: 0;
+  opacity: 0.42;
+  pointer-events: none;
+  position: absolute;
+  z-index: -1;
+}
+
+.premium-frame {
+  position: relative;
+}
+
+.premium-frame::before {
+  background:
+    radial-gradient(ellipse at 18% 18%, rgba(217, 197, 143, 0.1), transparent 64%),
+    radial-gradient(ellipse at 84% 24%, rgba(82, 109, 199, 0.09), transparent 66%);
+  content: "";
+  filter: blur(42px);
+  inset: -84px;
+  opacity: 0.5;
+  pointer-events: none;
+  position: absolute;
+  z-index: -1;
+}
+
+.localized-glow {
+  position: relative;
+}
+
+.localized-glow::before {
+  animation: ambient-shift 28s ease-in-out infinite alternate;
+  background:
+    radial-gradient(ellipse at 24% 50%, rgba(217, 197, 143, 0.075), transparent 66%),
+    radial-gradient(ellipse at 78% 50%, rgba(82, 109, 199, 0.08), transparent 68%),
+    radial-gradient(ellipse at 52% 62%, rgba(115, 74, 140, 0.038), transparent 70%);
+  content: "";
+  filter: blur(62px);
+  inset: -170px -12vw;
+  mask-image: radial-gradient(ellipse at center, black 0%, black 34%, transparent 70%);
+  pointer-events: none;
+  position: absolute;
+  z-index: -1;
+}
+
+.localized-glow::after {
+  animation: ambient-shift 36s ease-in-out infinite alternate-reverse;
+  background:
+    radial-gradient(ellipse at 40% 55%, rgba(217, 197, 143, 0.04), transparent 68%),
+    radial-gradient(ellipse at 66% 42%, rgba(82, 109, 199, 0.045), transparent 70%);
+  content: "";
+  filter: blur(70px);
+  inset: -140px -10vw;
+  opacity: 0.58;
+  pointer-events: none;
+  position: absolute;
+  z-index: -1;
+}
+
+.warm-trust-glow {
+  position: relative;
+}
+
+.warm-trust-glow::before {
+  background:
+    radial-gradient(ellipse at 48% 42%, rgba(217, 197, 143, 0.12), transparent 64%),
+    radial-gradient(ellipse at 82% 56%, rgba(82, 109, 199, 0.055), transparent 58%);
+  content: "";
+  filter: blur(12px);
+  inset: -64px -20px;
+  pointer-events: none;
+  position: absolute;
+  z-index: -1;
+}
+
+.closing-glow {
+  position: relative;
+}
+
+.closing-glow::before {
+  animation: ambient-shift 30s ease-in-out infinite alternate;
+  background:
+    radial-gradient(circle at 44% 35%, rgba(217, 197, 143, 0.26), transparent 46%),
+    radial-gradient(circle at 72% 72%, rgba(82, 109, 199, 0.17), transparent 46%);
+  content: "";
+  filter: blur(22px);
+  inset: -102px -22px;
+  mask-image: radial-gradient(ellipse at center, black 0%, black 52%, transparent 80%);
+  pointer-events: none;
+  position: absolute;
+  z-index: -1;
+}
+
+.final-cta-panel {
+  color: inherit;
+}
+
+.final-cta-panel .cta-glow {
+  box-shadow:
+    0 0 0 1px rgba(217, 197, 143, 0.2),
+    0 18px 38px rgba(0, 0, 0, 0.24),
+    0 0 22px rgba(217, 197, 143, 0.08);
+}
+
+.cta-glow {
+  transition:
+    box-shadow 220ms ease,
+    background-color 220ms ease,
+    border-color 220ms ease,
+    color 220ms ease,
+    transform 220ms ease;
+}
+
+.cta-glow:hover {
+  box-shadow: 0 0 30px rgba(217, 197, 143, 0.18);
+  transform: translateY(-1px);
+}
+
 .float-slow {
   animation: float-slow 7s ease-in-out infinite;
 }
 
 .float-slower {
   animation: float-slow 9s ease-in-out infinite reverse;
+}
+
+.stagger-in {
+  animation: reveal 760ms ease both;
+}
+
+.stagger-1 {
+  animation-delay: 120ms;
+}
+
+.stagger-2 {
+  animation-delay: 220ms;
+}
+
+.stagger-3 {
+  animation-delay: 320ms;
 }
 
 .rotating-word {
@@ -82,7 +260,7 @@ html {
 }
 
 .rotating-word span {
-  animation: rotate-word 22s cubic-bezier(0.77, 0, 0.18, 1) infinite;
+  animation: rotate-word 12s cubic-bezier(0.77, 0, 0.18, 1) infinite;
   left: 0;
   opacity: 0;
   position: absolute;
@@ -92,15 +270,15 @@ html {
 }
 
 .rotating-word span:nth-child(2) {
-  animation-delay: 5.5s;
+  animation-delay: 3s;
 }
 
 .rotating-word span:nth-child(3) {
-  animation-delay: 11s;
+  animation-delay: 6s;
 }
 
 .rotating-word span:nth-child(4) {
-  animation-delay: 16.5s;
+  animation-delay: 9s;
 }
 
 .lift-glow {
@@ -115,6 +293,19 @@ html {
 .lift-glow:hover {
   box-shadow: 0 18px 42px rgba(217, 197, 143, 0.1);
   transform: translateY(-3px);
+}
+
+.media-card {
+  box-shadow:
+    0 24px 70px rgba(0, 0, 0, 0.34),
+    inset 0 1px 0 rgba(255, 255, 255, 0.06);
+}
+
+.media-card:hover {
+  box-shadow:
+    0 28px 86px rgba(0, 0, 0, 0.42),
+    0 0 42px rgba(217, 197, 143, 0.08),
+    inset 0 1px 0 rgba(255, 255, 255, 0.08);
 }
 
 @keyframes reveal {
@@ -193,6 +384,11 @@ html {
   .ambient-shift,
   .hero-ambient,
   .light-sweep,
+  .home-canvas::before,
+  .home-canvas::after,
+  .localized-glow::before,
+  .localized-glow::after,
+  .closing-glow::before,
   .float-slow,
   .float-slower,
   .reveal,
@@ -204,6 +400,18 @@ html {
   .rotating-word span:first-child {
     opacity: 1;
     transform: none;
+  }
+}
+
+@media (max-width: 767px) {
+  .float-slow,
+  .float-slower {
+    animation: none;
+  }
+
+  .home-canvas::before,
+  .home-canvas::after {
+    opacity: 0.34;
   }
 }
 

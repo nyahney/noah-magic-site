@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
+import Image from "next/image";
 import Link from "next/link";
 import "./globals.css";
 
@@ -14,18 +15,18 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://noahmagic.com"),
+  metadataBase: new URL("https://noahyahney.com"),
   title: {
-    default: "Noah Magic | Modern Magician",
-    template: "%s | Noah Magic",
+    default: "Noah Yahney Magic & Mentalism",
+    template: "%s | Noah Yahney Magic & Mentalism",
   },
   description:
-    "Premium close-up magic and modern mentalism for private events, weddings, and corporate experiences.",
+    "Modern, visual, high-energy magic and mentalism for black-tie corporate galas, private events, adults, and teens.",
   openGraph: {
-    title: "Noah Magic | Modern Magician",
+    title: "Noah Yahney Magic & Mentalism",
     description:
-      "A sleek, cinematic performance brand for intimate magic and mentalism.",
-    images: ["/media/og/noah-magic-og.jpg"],
+      "Noah brings a modern perspective to an age-old craft with interactive magic, mind-reading, and sleight-of-hand.",
+    images: ["/media/main-picture.jpg"],
   },
 };
 
@@ -45,11 +46,8 @@ export default function RootLayout({
         <header className="sticky top-0 z-50 border-b border-white/10 bg-black/70 backdrop-blur-xl">
           <nav className="mx-auto flex max-w-7xl items-center justify-between px-5 py-4 sm:px-8">
             <Link href="/" className="group inline-flex items-center gap-3">
-              <span className="flex size-9 items-center justify-center border border-[#c7a969]/50 bg-[#c7a969]/10 text-sm font-semibold tracking-[0.18em] text-[#d9c58f]">
-                NM
-              </span>
-              <span className="text-sm font-semibold uppercase tracking-[0.28em] text-zinc-100 transition-colors group-hover:text-[#d9c58f]">
-                Noah Magic
+              <span className="text-base font-semibold uppercase tracking-[0.32em] text-zinc-100 transition-colors group-hover:text-[#d9c58f] sm:text-lg">
+                Noah Yahney
               </span>
             </Link>
             <div className="flex items-center gap-5 text-xs font-medium uppercase tracking-[0.22em] text-zinc-400 sm:gap-8">
@@ -74,13 +72,28 @@ export default function RootLayout({
         <main>{children}</main>
         <footer className="border-t border-white/10 px-5 py-10 sm:px-8">
           <div className="mx-auto flex max-w-7xl flex-col gap-6 text-sm text-zinc-500 md:flex-row md:items-center md:justify-between">
-            <p>Premium magic and mentalism for events built around connection.</p>
+            <div className="flex items-center gap-4">
+              <Image
+                src="/media/logo-take-1-no-background.png"
+                alt="Noah Yahney Magic & Mentalism logo"
+                width={52}
+                height={52}
+                className="h-12 w-auto object-contain"
+              />
+              <p>Noah Yahney Magic & Mentalism - modern magic for memorable events.</p>
+            </div>
             <div className="flex flex-wrap gap-5 uppercase tracking-[0.22em]">
-              <a className="hover:text-[#d9c58f]" href="mailto:booking@example.com">
-                booking@example.com
+              <a
+                className="hover:text-[#d9c58f]"
+                href="https://www.instagram.com/magicofnoah"
+              >
+                @magicofnoah
               </a>
-              <a className="hover:text-[#d9c58f]" href="tel:+15550123456">
-                (555) 012-3456
+              <a className="hover:text-[#d9c58f]" href="mailto:noahyahney@gmail.com">
+                noahyahney@gmail.com
+              </a>
+              <a className="hover:text-[#d9c58f]" href="tel:+15167814700">
+                (516) 781-4700
               </a>
             </div>
           </div>

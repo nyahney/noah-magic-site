@@ -3,7 +3,7 @@ import type { Metadata } from "next";
 export const metadata: Metadata = {
   title: "Contact",
   description:
-    "Contact Noah Magic for private events, weddings, corporate receptions, and premium performance bookings.",
+    "Contact Noah Yahney Magic & Mentalism for black-tie corporate galas, intimate private events, close-up magic, and walkaround mentalism.",
 };
 
 const bookingDetails = [
@@ -22,26 +22,31 @@ export default function ContactPage() {
             Contact
           </p>
           <h1 className="mt-5 text-5xl font-semibold tracking-normal text-zinc-50 sm:text-7xl">
-            Bring impossible closer.
+            Drop us a line.
           </h1>
           <p className="mt-6 max-w-2xl text-lg leading-8 text-zinc-400">
-            For now, this static site uses direct email and phone links. When
-            you are ready, connect a form provider such as Formspree or a CRM
-            booking flow.
+            Whether a black-tie corporate gala or an intimate private event,
+            Noah brings a unique approach to each performance.
           </p>
 
           <div className="mt-10 space-y-4 text-lg">
             <a
               className="block border-b border-white/10 pb-4 text-zinc-100 transition hover:text-[#d9c58f]"
-              href="mailto:booking@example.com?subject=Event%20Booking%20Inquiry"
+              href="mailto:noahyahney@gmail.com?subject=Event%20Booking%20Inquiry"
             >
-              booking@example.com
+              noahyahney@gmail.com
             </a>
             <a
               className="block border-b border-white/10 pb-4 text-zinc-100 transition hover:text-[#d9c58f]"
-              href="tel:+15550123456"
+              href="tel:+15167814700"
             >
-              (555) 012-3456
+              (516) 781-4700
+            </a>
+            <a
+              className="block border-b border-white/10 pb-4 text-zinc-100 transition hover:text-[#d9c58f]"
+              href="https://www.instagram.com/magicofnoah"
+            >
+              @magicofnoah
             </a>
           </div>
         </div>
@@ -52,40 +57,38 @@ export default function ContactPage() {
           </h2>
           <form
             className="mt-8 grid gap-5"
-            action="mailto:booking@example.com"
+            action="mailto:noahyahney@gmail.com"
             method="post"
             encType="text/plain"
           >
+            {/* TODO: Connect this static form to Formspree, Vercel Forms, or another booking workflow for browser-native submissions. */}
             <label className="grid gap-2 text-sm font-medium text-zinc-300">
               Name
               <input
-                className="h-12 border border-white/10 bg-black/50 px-4 text-zinc-100 outline-none transition placeholder:text-zinc-600 focus:border-[#d9c58f]"
+                className="h-12 border border-white/10 bg-black/50 px-4 text-zinc-100 outline-none transition focus:border-[#d9c58f]"
                 name="name"
-                placeholder="Your name"
               />
             </label>
             <label className="grid gap-2 text-sm font-medium text-zinc-300">
               Email
               <input
-                className="h-12 border border-white/10 bg-black/50 px-4 text-zinc-100 outline-none transition placeholder:text-zinc-600 focus:border-[#d9c58f]"
+                className="h-12 border border-white/10 bg-black/50 px-4 text-zinc-100 outline-none transition focus:border-[#d9c58f]"
                 name="email"
-                placeholder="you@example.com"
                 type="email"
               />
             </label>
             <label className="grid gap-2 text-sm font-medium text-zinc-300">
               Event details
               <textarea
-                className="min-h-36 resize-y border border-white/10 bg-black/50 p-4 text-zinc-100 outline-none transition placeholder:text-zinc-600 focus:border-[#d9c58f]"
+                className="min-h-36 resize-y border border-white/10 bg-black/50 p-4 text-zinc-100 outline-none transition focus:border-[#d9c58f]"
                 name="event_details"
-                placeholder="Date, location, guest count, and the kind of experience you want."
               />
             </label>
             <button
               className="h-12 bg-[#d9c58f] px-7 text-sm font-semibold uppercase tracking-[0.18em] text-black transition hover:bg-zinc-100"
               type="submit"
             >
-              Send inquiry
+              Prepare inquiry
             </button>
           </form>
           <div className="mt-8 border-t border-white/10 pt-6">

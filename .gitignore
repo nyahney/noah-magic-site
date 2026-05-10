@@ -39,3 +39,6 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+public/media/final-rev-real.mp4
+public/media/magic-of-noah-halloween-2023-v1.mp4

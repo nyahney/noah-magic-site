@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
-import Image from "next/image";
 import Link from "next/link";
+import { GalleryLightbox } from "./gallery-lightbox";
 
 export const metadata: Metadata = {
   title: "Gallery",
@@ -102,23 +102,7 @@ export default function GalleryPage() {
           </p>
         </div>
 
-        <div className="mt-10 grid auto-rows-[185px] grid-cols-2 gap-3 sm:auto-rows-[250px] sm:gap-4 md:grid-cols-4">
-          {galleryItems.map((item) => (
-            <article
-              key={item.path}
-              className={`group relative overflow-hidden border border-white/10 bg-[#10100c] shadow-xl shadow-black/20 transition hover:-translate-y-1 hover:border-[#d9c58f]/35 ${item.className ?? ""}`}
-            >
-              <Image
-                className="absolute inset-0 object-cover opacity-85 transition duration-700 group-hover:scale-105 group-hover:opacity-100"
-                src={item.path}
-                alt=""
-                fill
-                loading="lazy"
-                sizes="(min-width: 1024px) 25vw, (min-width: 768px) 50vw, 100vw"
-              />
-            </article>
-          ))}
-        </div>
+        <GalleryLightbox items={galleryItems} />
 
         <div className="mt-10 flex flex-col items-start justify-between gap-5 border-t border-white/10 pt-8 sm:flex-row sm:items-center">
           <p className="max-w-2xl text-zinc-400">

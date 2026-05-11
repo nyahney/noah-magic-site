@@ -409,9 +409,10 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="scroll-reveal px-5 pb-20 pt-10 sm:px-8 sm:pb-28">
-        <div className="final-cta-panel closing-glow mx-auto max-w-7xl overflow-hidden border border-[#d9c58f]/45 bg-[linear-gradient(135deg,rgba(255,255,255,0.3),rgba(255,255,255,0.16))] px-6 py-10 shadow-xl shadow-black/16 sm:px-10 sm:py-14">
-          <div className="max-w-3xl">
+      <section className="px-5 pb-20 pt-10 sm:px-8 sm:pb-28">
+        <div className="relative isolate mx-auto max-w-7xl overflow-hidden border border-white/10 bg-[#14130f] px-6 py-10 shadow-2xl shadow-black/30 sm:px-10 sm:py-14">
+          <div className="pointer-events-none absolute inset-0 -z-10 bg-[radial-gradient(circle_at_18%_0%,rgba(217,197,143,0.16),transparent_42%),radial-gradient(circle_at_88%_100%,rgba(82,109,199,0.12),transparent_44%)]" />
+          <div className="relative z-10 max-w-3xl">
             <h2 className="text-3xl font-semibold text-zinc-50 sm:text-6xl">
               Make your event unforgettable.
             </h2>

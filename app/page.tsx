@@ -2,7 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 import type { CSSProperties } from "react";
 
-const featureImage = "/media/new-website-main-pic.jpg";
+const featureImage = "/media/noah-yahney-magician-hero-portrait.jpg";
 
 const trustItems = [
   "15 Years Experience",
@@ -83,21 +83,54 @@ const testimonials = [
 
 const galleryPreview = [
   "/media/main-picture.jpg",
-  "/media/great-reactions-2.jpg",
-  "/media/another-adult-interaction-shot-00021-todd-yahney-events-pencu-bat-mitzvah.jpg",
-  "/media/standstill-adult-shot-crop-guy-on-right.jpg",
-  "/media/crowd-interaction-magic.jpg",
-  "/media/table-side-magic-reaction.jpg",
+  "/media/noah-yahney-live-event-guest-reactions.jpg",
+  "/media/noah-yahney-bat-mitzvah-guest-interaction.jpg",
+  "/media/noah-yahney-adult-event-close-up-magic.jpg",
+  "/media/noah-yahney-crowd-interaction-magic.jpg",
+  "/media/noah-yahney-table-side-magic-reaction.jpg",
 ];
 
 const heroCollage = [
-  "/media/great-reactions-2.jpg",
-  "/media/standstill-adult-shot-crop-guy-on-right.jpg",
-  "/media/table-side-magic-reaction.jpg",
+  "/media/noah-yahney-live-event-guest-reactions.jpg",
+  "/media/noah-yahney-adult-event-close-up-magic.jpg",
+  "/media/noah-yahney-table-side-magic-reaction.jpg",
 ];
 
 const googleReviewsUrl =
   "https://www.google.com/search?sca_esv=06a5c6fbedc9f216&rlz=1C1GCEA_enUS1179US1179&sxsrf=ANbL-n6_oT4k094shBvJusvee8sCbm0cdA:1778425063660&si=AL3DRZEsmMGCryMMFSHJ3StBhOdZ2-6yYkXd_doETEE1OR-qOfEN4rBi4sm9w9UehENhJJH5bq9uadivMY0m4vFjw3G0xQchQT3L7W725lTkAj_2j1pXoj0dmBIIqj4tN7rLGa_Qyl5z7CbgQnG45e8zxttV-CMo2A%3D%3D&q=Noah+Yahney+Magic+%26+Mentalism+Reviews&sa=X&ved=2ahUKEwjNiLfR_a6UAxUCjIkEHduGAEYQ0bkNegQIMBAF&biw=1920&bih=945&dpr=1";
+
+const faqItems = [
+  {
+    question: "What type of events does Noah perform at?",
+    answer:
+      "Noah performs close-up magic and mentalism for private parties, corporate events, cocktail hours, weddings, Bar and Bat Mitzvahs, and luxury celebrations.",
+  },
+  {
+    question: "What type of magic does Noah perform?",
+    answer:
+      "Noah specializes in modern close-up magic, visual magic, and mind reading performed inches away from guests. The experience is interactive, polished, and designed to create strong reactions throughout the room.",
+  },
+  {
+    question: "Is the performance appropriate for both adults and kids?",
+    answer:
+      "Yes. Noah's performances are designed to be engaging for a wide range of audiences and can be tailored to the tone of the event, whether it is an adults-only cocktail hour, a family celebration, or a corporate gathering.",
+  },
+  {
+    question: "Do you perform outside New York?",
+    answer:
+      "Yes. Noah is based in New York and is available for events across the East Coast, including New York, Long Island, New Jersey, Connecticut, Pennsylvania, and beyond.",
+  },
+  {
+    question: "How long is a typical performance?",
+    answer:
+      "Most bookings are customized based on the event format, guest count, and schedule. Close-up magic is commonly performed during cocktail hours, receptions, private parties, and other moments where guests are mingling.",
+  },
+  {
+    question: "How do I book Noah for an event?",
+    answer:
+      "Use the contact form or availability button on the website to share your event date, location, and details. Noah will follow up with availability and the best format for your event.",
+  },
+];
 
 export default function Home() {
   return (
@@ -113,8 +146,7 @@ export default function Home() {
               Modern Magic & Mentalism for Premium Events
             </h1>
             <p className="mt-5 max-w-2xl text-base leading-7 text-zinc-300 sm:text-xl sm:leading-8">
-              Noah Yahney creates interactive, high-energy moments that get
-              guests laughing, reacting, and talking long after the event ends.
+              Noah Yahney is a New York-based magician and mentalist performing across the East Coast, including NY, CT, NJ, PA, and beyond. He creates interactive, high-energy moments guests remember long after the event ends.
             </p>
             <div className="mt-8 flex flex-col gap-3 sm:flex-row">
               <Link
@@ -405,6 +437,40 @@ export default function Home() {
             >
               View Full Gallery
             </Link>
+          </div>
+        </div>
+      </section>
+
+      <section className="scroll-reveal px-5 py-16 sm:px-8 sm:py-20">
+        <div className="mx-auto max-w-7xl">
+          <div className="mb-8 max-w-3xl">
+            <p className="text-[17px] font-semibold uppercase tracking-[0.34em] text-[#d9c58f]">
+              FAQ
+            </p>
+            <h2 className="mt-4 text-3xl font-semibold text-zinc-50 sm:text-5xl">
+              Questions before booking.
+            </h2>
+          </div>
+          <div className="grid gap-3">
+            {faqItems.map((item) => (
+              <details
+                className="group border border-white/10 bg-[#10100c]/72 p-5 transition hover:border-[#d9c58f]/35 hover:bg-white/[0.045] sm:p-6"
+                key={item.question}
+              >
+                <summary className="flex cursor-pointer list-none items-center justify-between gap-5 text-left text-base font-semibold text-zinc-50 sm:text-lg [&::-webkit-details-marker]:hidden">
+                  <span>{item.question}</span>
+                  <span
+                    aria-hidden="true"
+                    className="grid size-8 shrink-0 place-items-center border border-white/10 text-[#d9c58f] transition group-open:rotate-45"
+                  >
+                    +
+                  </span>
+                </summary>
+                <p className="mt-4 max-w-4xl text-sm leading-7 text-zinc-300 sm:text-base">
+                  {item.answer}
+                </p>
+              </details>
+            ))}
           </div>
         </div>
       </section>

@@ -38,101 +38,102 @@ export function ContactForm() {
   }
 
   return (
-    <form className="mt-8 grid gap-5" onSubmit={handleSubmit}>
-      <label className="grid gap-2 text-sm font-medium text-zinc-300">
-        Name
-        <input
-          className="h-12 w-full border border-white/10 bg-[#080806]/70 px-4 text-zinc-100 outline-none transition focus:border-[#d9c58f]"
-          name="name"
-          required
-          autoComplete="name"
-        />
-      </label>
-      <label className="grid gap-2 text-sm font-medium text-zinc-300">
-        Email
-        <input
-          className="h-12 w-full border border-white/10 bg-[#080806]/70 px-4 text-zinc-100 outline-none transition focus:border-[#d9c58f]"
-          name="email"
-          type="email"
-          required
-          autoComplete="email"
-        />
-      </label>
-      <div className="grid gap-5 sm:grid-cols-2">
-        <label className="grid gap-2 text-sm font-medium text-zinc-300">
-          Event Date
-          <input
-            className="h-12 w-full border border-white/10 bg-[#080806]/70 px-4 text-zinc-100 outline-none transition focus:border-[#d9c58f]"
-            name="event_date"
-            type="date"
-          />
+    <form className="booking-form" onSubmit={handleSubmit}>
+      <input
+        type="hidden"
+        name="_subject"
+        value="New NoahYahney.com booking inquiry"
+      />
+
+      <div className="form-grid form-grid-two">
+        <label>
+          <span>Name <strong aria-hidden="true">*</strong></span>
+          <input name="name" required autoComplete="name" />
         </label>
-        <label className="grid gap-2 text-sm font-medium text-zinc-300">
-          Event Location
+        <label>
+          <span>Email <strong aria-hidden="true">*</strong></span>
           <input
-            className="h-12 w-full border border-white/10 bg-[#080806]/70 px-4 text-zinc-100 outline-none transition focus:border-[#d9c58f]"
-            name="event_location"
+            name="email"
+            type="email"
             required
-            autoComplete="address-level2"
+            autoComplete="email"
           />
         </label>
       </div>
-      <div className="grid gap-5 sm:grid-cols-2">
-        <label className="grid gap-2 text-sm font-medium text-zinc-300">
-          Event Type
-          <select
-            className="h-12 w-full border border-white/10 bg-[#080806]/70 px-4 text-zinc-100 outline-none transition focus:border-[#d9c58f]"
-            name="event_type"
+
+      <div className="form-grid form-grid-two">
+        <label>
+          <span>Event date</span>
+          <input name="event_date" type="date" />
+        </label>
+        <label>
+          <span>Event location <strong aria-hidden="true">*</strong></span>
+          <input
+            name="event_location"
             required
-            defaultValue=""
-          >
+            autoComplete="address-level2"
+            placeholder="City, state, or venue"
+          />
+        </label>
+      </div>
+
+      <div className="form-grid form-grid-two">
+        <label>
+          <span>Event type <strong aria-hidden="true">*</strong></span>
+          <select name="event_type" required defaultValue="">
             <option value="" disabled>
-              Select one
+              Select an event
             </option>
             <option>Corporate event</option>
             <option>Private event</option>
             <option>Wedding</option>
-            <option>Bar or bat mitzvah</option>
+            <option>Bar or Bat Mitzvah</option>
             <option>School or teen event</option>
             <option>Other</option>
           </select>
         </label>
-        <label className="grid gap-2 text-sm font-medium text-zinc-300">
-          Estimated Guest Count
+        <label>
+          <span>Estimated guest count</span>
           <input
-            className="h-12 w-full border border-white/10 bg-[#080806]/70 px-4 text-zinc-100 outline-none transition focus:border-[#d9c58f]"
             name="estimated_guest_count"
             type="number"
             min="1"
             inputMode="numeric"
+            placeholder="Approximate is fine"
           />
         </label>
       </div>
-      <label className="grid gap-2 text-sm font-medium text-zinc-300">
-        Message
+
+      <label>
+        <span>Tell Noah about the event <strong aria-hidden="true">*</strong></span>
         <textarea
-          className="min-h-36 w-full resize-y border border-white/10 bg-[#080806]/70 p-4 text-zinc-100 outline-none transition focus:border-[#d9c58f]"
           name="message"
           required
+          placeholder="What are you planning, and what would make the event feel successful?"
         />
       </label>
 
-      <button
-        className="h-12 w-full bg-[#d9c58f] px-7 text-sm font-semibold uppercase tracking-[0.18em] text-black transition hover:bg-zinc-100 disabled:cursor-not-allowed disabled:opacity-60"
-        type="submit"
-        disabled={status === "submitting"}
-      >
-        {status === "submitting" ? "Sending..." : "Send a Note"}
-      </button>
+      <div className="form-submit-row">
+        <button
+          className="button button-primary"
+          type="submit"
+          disabled={status === "submitting"}
+        >
+          {status === "submitting" ? "Sending inquiry..." : "Send inquiry"}
+          <span aria-hidden="true">&#8594;</span>
+        </button>
+        <p>Your details are sent directly to Noah.</p>
+      </div>
 
-      <div className="min-h-6" aria-live="polite">
+      <div className="form-status" aria-live="polite">
         {status === "success" ? (
-          <p className="text-sm text-[#d9c58f]">
-            Thank you. Your inquiry has been sent.
+          <p className="form-success" role="status">
+            Thank you. Your inquiry has been sent, and Noah will follow up
+            directly.
           </p>
         ) : null}
         {status === "error" ? (
-          <p className="text-sm text-red-300">
+          <p className="form-error" role="alert">
             Something went wrong. Please try again or email
             noahyahney@gmail.com.
           </p>

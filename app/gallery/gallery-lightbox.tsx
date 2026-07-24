@@ -1,10 +1,11 @@
 "use client";
 
 import Image from "next/image";
-import { useEffect, useState } from "react";
+import { useCallback, useEffect, useRef, useState } from "react";
 
-type GalleryItem = {
+export type GalleryItem = {
   path: string;
+  alt: string;
   className?: string;
 };
 
@@ -14,26 +15,30 @@ type GalleryLightboxProps = {
 
 export function GalleryLightbox({ items }: GalleryLightboxProps) {
   const [selectedIndex, setSelectedIndex] = useState<number | null>(null);
+  const closeButtonRef = useRef<HTMLButtonElement>(null);
+  const activeTriggerRef = useRef<HTMLButtonElement | null>(null);
+
   const selectedItem =
     selectedIndex === null ? null : items[selectedIndex] ?? null;
 
-  function closeLightbox() {
+  const closeLightbox = useCallback(() => {
     setSelectedIndex(null);
-  }
+    window.requestAnimationFrame(() => activeTriggerRef.current?.focus());
+  }, []);
 
-  function showPrevious() {
+  const showPrevious = useCallback(() => {
     setSelectedIndex((currentIndex) =>
       currentIndex === null
         ? currentIndex
         : (currentIndex - 1 + items.length) % items.length,
     );
-  }
+  }, [items.length]);
 
-  function showNext() {
+  const showNext = useCallback(() => {
     setSelectedIndex((currentIndex) =>
       currentIndex === null ? currentIndex : (currentIndex + 1) % items.length,
     );
-  }
+  }, [items.length]);
 
   useEffect(() => {
     if (selectedIndex === null) {
@@ -46,108 +51,117 @@ export function GalleryLightbox({ items }: GalleryLightboxProps) {
       }
 
       if (event.key === "ArrowLeft") {
-        setSelectedIndex((currentIndex) =>
-          currentIndex === null
-            ? currentIndex
-            : (currentIndex - 1 + items.length) % items.length,
-        );
+        showPrevious();
       }
 
       if (event.key === "ArrowRight") {
-        setSelectedIndex((currentIndex) =>
-          currentIndex === null
-            ? currentIndex
-            : (currentIndex + 1) % items.length,
-        );
+        showNext();
       }
     }
 
     const originalOverflow = document.body.style.overflow;
     document.body.style.overflow = "hidden";
     window.addEventListener("keydown", handleKeyDown);
+    closeButtonRef.current?.focus();
 
     return () => {
       document.body.style.overflow = originalOverflow;
       window.removeEventListener("keydown", handleKeyDown);
     };
-  }, [items.length, selectedIndex]);
+  }, [closeLightbox, selectedIndex, showNext, showPrevious]);
 
   return (
     <>
-      <div className="mt-10 grid auto-rows-[185px] grid-cols-2 gap-3 sm:auto-rows-[250px] sm:gap-4 md:grid-cols-4">
+      <div className="gallery-grid">
         {items.map((item, index) => (
           <button
             key={item.path}
             type="button"
-            className={`group relative overflow-hidden border border-white/10 bg-[#10100c] text-left shadow-xl shadow-black/20 transition hover:-translate-y-1 hover:border-[#d9c58f]/35 focus:outline-none focus-visible:border-[#d9c58f] ${item.className ?? ""}`}
-            onClick={() => setSelectedIndex(index)}
-            aria-label="Open gallery image"
+            className={`gallery-tile ${item.className ?? ""}`}
+            onClick={(event) => {
+              activeTriggerRef.current = event.currentTarget;
+              setSelectedIndex(index);
+            }}
+            aria-label={`Open image ${index + 1} of ${items.length}: ${item.alt}`}
+            aria-haspopup="dialog"
           >
             <Image
-              className="absolute inset-0 object-cover opacity-85 transition duration-700 group-hover:scale-105 group-hover:opacity-100"
               src={item.path}
               alt=""
               fill
               loading="lazy"
-              sizes="(min-width: 1024px) 25vw, (min-width: 768px) 50vw, 100vw"
+              sizes="(min-width: 1100px) 25vw, (min-width: 700px) 34vw, 50vw"
             />
+            <span className="gallery-tile-index" aria-hidden="true">
+              {String(index + 1).padStart(2, "0")}
+            </span>
           </button>
         ))}
       </div>
 
-      {selectedItem ? (
+      {selectedItem && selectedIndex !== null ? (
         <div
-          className="fixed inset-0 z-[100] flex items-center justify-center bg-[#030405]/92 p-4 backdrop-blur-md sm:p-8"
+          className="lightbox"
           onClick={closeLightbox}
           role="dialog"
           aria-modal="true"
           aria-label="Gallery image viewer"
         >
-          <button
-            type="button"
-            className="absolute right-4 top-4 z-20 flex size-11 items-center justify-center border border-white/15 bg-white/10 text-2xl leading-none text-zinc-100 transition hover:border-[#d9c58f] hover:text-[#d9c58f] sm:right-6 sm:top-6"
-            onClick={closeLightbox}
-            aria-label="Close gallery image"
-          >
-            &times;
-          </button>
+          <div className="lightbox-topbar">
+            <p aria-live="polite">
+              {String(selectedIndex + 1).padStart(2, "0")}
+              <span>/</span>
+              {String(items.length).padStart(2, "0")}
+            </p>
+            <button
+              ref={closeButtonRef}
+              type="button"
+              className="lightbox-control lightbox-close"
+              onClick={closeLightbox}
+              aria-label="Close gallery image"
+              title="Close"
+            >
+              &times;
+            </button>
+          </div>
 
           <button
             type="button"
-            className="absolute left-3 top-1/2 z-20 flex size-11 -translate-y-1/2 items-center justify-center border border-white/15 bg-white/10 text-3xl text-zinc-100 transition hover:border-[#d9c58f] hover:text-[#d9c58f] sm:left-6"
+            className="lightbox-control lightbox-previous"
             onClick={(event) => {
               event.stopPropagation();
               showPrevious();
             }}
             aria-label="Show previous image"
+            title="Previous image"
           >
-            &#8249;
+            &#8592;
           </button>
 
           <div
-            className="relative h-[82vh] w-[min(92vw,1200px)]"
+            className="lightbox-image"
             onClick={(event) => event.stopPropagation()}
           >
             <Image
-              className="object-contain"
               src={selectedItem.path}
-              alt=""
+              alt={selectedItem.alt}
               fill
-              priority
-              sizes="92vw"
+              loading="eager"
+              sizes="96vw"
             />
           </div>
 
           <button
             type="button"
-            className="absolute right-3 top-1/2 z-20 flex size-11 -translate-y-1/2 items-center justify-center border border-white/15 bg-white/10 text-3xl text-zinc-100 transition hover:border-[#d9c58f] hover:text-[#d9c58f] sm:right-6"
+            className="lightbox-control lightbox-next"
             onClick={(event) => {
               event.stopPropagation();
               showNext();
             }}
             aria-label="Show next image"
+            title="Next image"
           >
-            &#8250;
+            &#8594;
           </button>
         </div>
       ) : null}

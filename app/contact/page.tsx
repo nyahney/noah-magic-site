@@ -1,118 +1,95 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import { ContactForm } from "./contact-form";
 
 export const metadata: Metadata = {
   title: "Contact",
   description:
     "Get in touch with Noah Yahney, modern magician and mentalist for private events, corporate gatherings, luxury celebrations, and unforgettable experiences.",
+  alternates: {
+    canonical: "/contact",
+  },
+  openGraph: {
+    title: "Contact Noah Yahney",
+    description:
+      "Check availability for modern magic and mentalism at your private or corporate event.",
+    url: "/contact",
+  },
 };
 
 const bookingDetails = [
   "Event date and location",
   "Guest count and event type",
   "Preferred performance format",
-  "Any timing or venue constraints",
+  "Timing or venue considerations",
 ];
 
 export default function ContactPage() {
   return (
-    <section className="relative overflow-hidden px-5 py-12 sm:px-8 sm:py-20">
-      <div className="absolute inset-x-0 top-0 -z-10 h-[32rem] bg-[radial-gradient(circle_at_20%_0%,rgba(217,197,143,0.13),transparent_42%),radial-gradient(circle_at_85%_10%,rgba(82,109,199,0.15),transparent_42%)] [mask-image:linear-gradient(to_bottom,black_0%,black_58%,transparent_100%)]" />
-      <div className="mx-auto grid max-w-7xl gap-10 lg:grid-cols-[0.85fr_1.15fr] lg:gap-12">
-        <div>
-          <p className="text-[17px] font-semibold uppercase tracking-[0.36em] text-[#d9c58f]">
-            Contact
+    <div className="contact-page">
+      <section className="contact-hero">
+        <Image
+          src="/media/noah-yahney-bat-mitzvah-guest-interaction.jpg"
+          alt=""
+          fill
+          preload
+          sizes="100vw"
+          aria-hidden="true"
+        />
+        <div className="contact-hero-shade" aria-hidden="true" />
+        <div className="page-shell contact-hero-inner">
+          <p className="eyebrow">Booking inquiry</p>
+          <h1>Let&apos;s make the room unforgettable.</h1>
+          <p>
+            Tell Noah what you are planning. You will hear back directly with
+            availability, the right performance format, and clear next steps.
           </p>
-          <h1 className="mt-4 text-4xl font-semibold tracking-normal text-zinc-50 sm:mt-5 sm:text-7xl">
-            Let&apos;s talk about your event.
-          </h1>
-          <p className="mt-6 max-w-2xl text-lg leading-8 text-zinc-400">
-            Tell me a little about your event and I&apos;ll get back to you
-            with availability and next steps.
-          </p>
-          <p className="mt-4 max-w-2xl text-sm leading-6 text-zinc-500 sm:text-base">
-            Available for events across New York, New Jersey, Connecticut, and
-            beyond.
-          </p>
-
-          <div className="mt-8 border-y border-white/10 py-5">
-            <p className="text-3xl font-semibold text-zinc-50">15 years</p>
-            <p className="mt-2 text-xs font-semibold uppercase tracking-[0.22em] text-zinc-500">
-              Professional magic and mentalism
-            </p>
-          </div>
-
-          <div className="mt-8 space-y-4 text-base sm:text-lg">
-            <a
-              className="block border-b border-white/10 pb-4 text-zinc-100 transition hover:text-[#d9c58f]"
-              href="mailto:noahyahney@gmail.com?subject=Event%20Booking%20Inquiry"
-            >
-              noahyahney@gmail.com
-            </a>
-            <a
-              className="block border-b border-white/10 pb-4 text-zinc-100 transition hover:text-[#d9c58f]"
-              href="tel:+15167814700"
-            >
-              (516) 781-4700
-            </a>
-            <a
-              className="flex items-center gap-3 border-b border-white/10 pb-4 text-zinc-100 transition hover:text-[#d9c58f]"
-              href="https://www.instagram.com/magicofnoah/"
-              target="_blank"
-              rel="noopener noreferrer"
-              aria-label="Follow Noah Yahney on Instagram"
-            >
-              <svg
-                aria-hidden="true"
-                className="size-5 text-[#d9c58f]"
-                fill="none"
-                viewBox="0 0 24 24"
-              >
-                <rect
-                  width="17"
-                  height="17"
-                  x="3.5"
-                  y="3.5"
-                  rx="5"
-                  stroke="currentColor"
-                  strokeWidth="1.6"
-                />
-                <circle
-                  cx="12"
-                  cy="12"
-                  r="3.5"
-                  stroke="currentColor"
-                  strokeWidth="1.6"
-                />
-                <circle cx="17" cy="7" r="1.1" fill="currentColor" />
-              </svg>
-              @magicofnoah
-            </a>
-          </div>
         </div>
+      </section>
 
-        <div className="border border-white/10 bg-[#10100c]/75 p-5 shadow-2xl shadow-black/30 backdrop-blur sm:p-8">
-          <h2 className="text-2xl font-semibold text-zinc-50">
-            Booking inquiry
-          </h2>
-          <p className="mt-3 text-sm leading-6 text-zinc-400">
-            Share the essentials and Noah will follow up directly.
-          </p>
-          <ContactForm />
-          <div className="mt-8 border-t border-white/10 pt-6">
-            <p className="text-sm font-semibold uppercase tracking-[0.22em] text-zinc-500">
-              Helpful to include
+      <section className="section contact-booking">
+        <div className="page-shell contact-layout">
+          <aside className="contact-details scroll-reveal">
+            <p className="eyebrow">The essentials</p>
+            <h2>A few details are all it takes to start.</h2>
+            <p>
+              Every event is different. Share what you know now, and Noah can
+              help shape the rest around your guest count, venue, and schedule.
             </p>
-            <ul className="mt-4 grid gap-3 text-zinc-400 sm:grid-cols-2">
-              {bookingDetails.map((detail) => (
-                <li key={detail} className="border-l border-[#d9c58f] pl-3">
+
+            <div className="contact-detail-list">
+              {bookingDetails.map((detail, index) => (
+                <p key={detail}>
+                  <span>{String(index + 1).padStart(2, "0")}</span>
                   {detail}
-                </li>
+                </p>
               ))}
-            </ul>
+            </div>
+
+            <div className="direct-contact">
+              <p>Prefer to reach out directly?</p>
+              <a href="mailto:noahyahney@gmail.com?subject=Event%20Booking%20Inquiry">
+                noahyahney@gmail.com
+              </a>
+              <a href="tel:+15167814700">(516) 781-4700</a>
+            </div>
+
+            <p className="contact-region">
+              Based in New York. Available across New York, New Jersey,
+              Connecticut, Pennsylvania, and beyond.
+            </p>
+          </aside>
+
+          <div className="booking-form-panel scroll-reveal">
+            <div className="booking-form-heading">
+              <p className="eyebrow">Your event</p>
+              <h2>Check availability</h2>
+              <p>Share the essentials and Noah will follow up directly.</p>
+            </div>
+            <ContactForm />
           </div>
         </div>
-      </div>
-    </section>
+      </section>
+    </div>
   );
 }
